@@ -67,6 +67,8 @@ analytics:
   vendors:
     googleAnalytics:
       id: null # or "G-XXXXXXXXXX"
+    plausible:
+      domain: 'pixlie.com'
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

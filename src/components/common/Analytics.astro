@@ -11,3 +11,10 @@ import { ANALYTICS } from 'astrowind:config';
     />
   ) : null
 }
+
+{/* Plausible Analytics (Self-Hosted) */}
+{
+  ANALYTICS?.vendors?.plausible?.domain ? (
+    <script defer data-domain={ANALYTICS.vendors.plausible.domain} src="https://plausible.endlessrange.com/js/script.js"></script>
+  ) : null
+}
