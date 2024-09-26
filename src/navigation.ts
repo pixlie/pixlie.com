@@ -127,19 +127,19 @@ export const headerData = {
       href: '/contact',
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  // actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
 
 export const footerData = {
   links: [
-    {
-      title: 'Product',
-      links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-      ],
-    },
+    // {
+    //   title: 'Product',
+    //   links: [
+    //     { text: 'Features', href: '#' },
+    //     { text: 'Security', href: '#' },
+    //     { text: 'Team', href: '#' },
+    //   ],
+    // },
     // {
     //   title: 'Platform',
     //   links: [
