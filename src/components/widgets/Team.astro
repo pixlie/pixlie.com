@@ -1,0 +1,55 @@
+---
+import type { Team as Props } from '~/types';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Headline from '../ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  team = [], // This is an array of TeamMember
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  <div class="flex flex-wrap justify-center -m-4 text-center">
+    {
+      team &&
+        team.map(({ image, name, job, description, socials }) => (
+          <div class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center">
+            {image && (
+              <div class="flex items-center justify-center mx-auto mb-4">
+                <img src={image.src} alt={image.alt} class="w-20 h-20 rounded-full" />
+              </div>
+            )}
+            {name && (
+              <div class="font-heading text-primary text-xl font-bold dark:text-white lg:text-2xl">
+                {name}
+              </div>
+            )}
+            {job && (
+              <div class="text-sm font-bold text-gray-600 dark:text-slate-400 lg:text-base">
+                {job}
+              </div>
+            )}
+            {description && (
+              <div class="text-sm font-medium text-gray-800 dark:text-slate-400 lg:text-base mt-2 text-left">
+                {description}
+              </div>
+            )}
+            {socials && socials.map(({ icon, href }) => (
+              <a href={href} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center">
+                <Icon name={icon} class="w-6 h-6 text-gray-500 hover:text-primary transition-colors" />
+              </a>
+            ))}
+          </div>
+        ))
+    }
+  </div>
+</WidgetWrapper>
