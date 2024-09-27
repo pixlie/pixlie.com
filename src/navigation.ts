@@ -112,11 +112,11 @@ export const headerData = {
     // },
     {
       text: 'Pixlie AI',
-      href: '#',
+      href: '/ai',
     },
     {
       text: 'Dwata',
-      href: '#',
+      href: '/dwata',
     },
     {
       text: 'About',

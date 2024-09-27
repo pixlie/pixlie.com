@@ -1,0 +1,410 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+// import Steps2 from '~/components/widgets/Steps2.astro';
+// import Content from '~/components/widgets/Content.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+
+import { headerData } from '~/navigation';
+// import FAQs from '~/components/widgets/FAQs.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+const metadata = {
+  title: 'Dwata - AI Driven Insights for Your Data',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header
+      {...headerData}
+      actions={[
+        {
+          variant: 'primary',
+          text: 'Get Started',
+          href: 'https://github.com/pixlie/dwata',
+        },
+      ]}
+      isSticky
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Dwata"
+    actions={[
+      { variant: 'primary', target: '_blank', text: 'Get Started', href: 'https://github.com/pixlie/dwata' },
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{
+      src: '/images/dwata-desktop.webp',
+      alt: 'Dwata Desktop',
+    }}
+  >
+    <Fragment slot="title">
+      AI-Driven <span class="text-accent dark:text-white highlight">Insights</span> for Your Data<br />
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        Dwata is a <span class="font-semibold">secure and private app</span> that uses AI to unlock the true value of your data.</span
+      >
+      From emails and files to calendars and contacts—everything is searchable and elegantly organized.
+    </Fragment>
+  </Hero2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="Streamline Your Data"
+    subtitle="No more digital clutter. Dwata helps you gather, search, and organize everything from emails to tasks across multiple accounts—while AI delivers actionable insights to streamline your workflow."
+    columns={2}
+    items={[
+{
+  title: 'All Your Data in One Place',
+  description:
+    'Unlock valuable insights from your emails, calendars, Slack, LinkedIn, and more—all securely stored on your computer.',
+  icon: 'tabler:stack',
+},
+{
+  title: 'Fully Offline Access',
+  description:
+    'Access your entire digital footprint, even offline. No internet required—perfect for flight mode or remote work.',
+  icon: 'tabler:device-desktop',
+},
+{
+  title: 'Complete Privacy Control',
+  description:
+    'Runs entirely on your laptop with full privacy. No data—product analytics included—leaves your device without your explicit permission.',
+  icon: 'tabler:shield-lock',
+},
+{
+  title: 'Blazing Fast Search',
+  description:
+    'Instantly search across all your emails, attachments, messages, contacts, and files with powerful AI-enhanced search.',
+  icon: 'tabler:search',
+},
+{
+  title: 'Organized Attachments and Files',
+  description:
+    'Easily browse attachments from emails and files from both online and local drives, neatly grouped by sender, date, or category.',
+  icon: 'tabler:folders',
+},
+{
+  title: 'Smart Reminders',
+  description:
+    'Dwata intelligently reminds you of important conversations, pending tasks, bills, and flights so nothing slips through the cracks.',
+  icon: 'tabler:bell',
+},
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+<!-- 
+  <Content
+    title="Use cases"
+    subtitle="Discover how AstroWind's versatile template serves as the ideal solution for various use cases, providing tailored solutions to drive success."
+    isReversed
+    items={[
+      {
+        title: 'Description:',
+        description:
+          'Are you a startup with big dreams? AstroWind propels your success. Our template forges a seamless online presence, attracting investors and customers from day one. Astro 4.0 and Tailwind CSS ensure striking, responsive sites, leaving lasting impressions. Countless startups leverage AstroWind to kickstart their journey and resonate with audiences.',
+      },
+      {
+        title: 'Benefits:',
+        description: `Allow startups to quickly create professional websites without investing extensive time and resources. <br /> Make a memorable first impression with visually appealing design elements that highlight your startup's unique value proposition. <br /> Ensures your website looks stunning and works well on all devices. <br /> Engage potential investors and customers with engaging content, clear messaging, and intuitive navigation.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1620558138198-cfb9b4f3c294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1671&q=80',
+      alt: 'Startup Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Startup success stories: <br /><span class="text-2xl">Launching with AstroWind</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Content Widget **************** -->
+<!-- 
+  <Content
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: `For SaaS businesses, user experience is key. AstroWind enhances showcasing SaaS solutions intuitively. The template's Astro 4.0 and Tailwind CSS integration guarantees user-friendly experience, mirroring your software's efficiency. Customize pages to communicate SaaS value and solutions for your audience.`,
+      },
+      {
+        title: 'Benefits:',
+        description: `Ensuring a cohesive and user-centric design for your SaaS website. <br /> Effectively communicate complex SaaS features through visual aids, animations, and interactive elements. <br /> Prioritize user needs and pain points through well-structured layouts and clear navigation. <br /> Encourage visitors to take action with strategically placed CTAs. <br /> Ensures your SaaS website works seamlessly across all devices.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1531973486364-5fa64260d75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1658&q=80',
+      alt: 'SaaS Businesses Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        SaaS showcase: <br /><span class="text-2xl">Streamlining user experience</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Content Widget **************** -->
+<!-- 
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[
+      {
+        title: 'Description:',
+        description: `Your portfolio is your masterpiece, and AstroWind is your canvas. Whether you're a designer, photographer, artist, or any other creative professional, AstroWind empowers you to showcase your work with elegance and sophistication. Tailored to highlight your creative projects, AstroWind's templates offer a visually immersive experience that lets your portfolio shine.`,
+      },
+      {
+        title: 'Benefits:',
+        description: `Serve as a captivating backdrop to showcase your creative work, capturing attention and leaving a lasting impression. <br /> Tailor your portfolio to reflect your unique style and artistic vision. <br /> Prioritizes visuals, allowing you to present your work in high-resolution detail that draws viewers into your creations. <br /> Enables seamless navigation for effortless portfolio exploration.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Portfolio Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Creative portfolios: <br /><span class="text-2xl">Highlighting your work</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Content Widget **************** -->
+<!-- 
+  <Content
+    items={[
+      {
+        title: 'Description:',
+        description: `For small businesses, a well-crafted website can be a game-changer. AstroWind empowers small businesses to not only establish a credible online presence but also convert visitors into loyal customers. The template's thoughtful design and optimization features ensure that your website doesn't just attract attention but also guides visitors through a seamless journey, ultimately leading to conversions.`,
+      },
+      {
+        title: 'Benefits:',
+        description: `Present your small business with a professional and polished website that instills confidence and trust among visitors. <br /> Strategically placed CTAs, user-friendly forms, and optimized layouts work together to drive user engagement and conversions. <br /> Ensure a smooth browsing experience, reducing bounce rates and encouraging interaction.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1514621166532-aa7eb1a3a2f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Small Business Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Small business growth: <br /><span class="text-2xl">Converting visitors into customers</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content> -->
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    title="Pricing"
+    subtitle="Start for free. Upgrade when you want, pay once and use forever. Free updates for a year."
+    prices={[
+      {
+        title: 'Personal',
+        subtitle: 'Optimal choice for personal use',
+        price: 'Free',
+        period: 'per month',
+        items: [
+          {
+            description: 'Email - unlimited accounts',
+          },
+          {
+            description: 'Attachments manager',
+          },
+          {
+            description: 'Contacts manager',
+          },
+          {
+            description: 'Blazing fast search',
+          },
+          {
+            description: 'Works offline',
+          },
+          {
+            description: 'Complete privacy',
+          },
+          {
+            description: 'Community Support',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: 'https://github.com/pixlie/dwata',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: 'Professional',
+        subtitle: 'Optimal choice for busy professionals',
+        price: 29,
+        period: 'Per Month',
+        items: [
+          {
+            description: 'All Personal Features +',
+          },
+          {
+            description: 'Mobile app',
+          },
+          {
+            description: 'Slack, Google Calendar - unlimited accounts',
+          },
+          {
+            description: 'Managed inbox with AI',
+          },
+          {
+            description: 'Open Source AI on your own cloud server for full privacy',
+          },
+          {
+            description: '72 hour email support',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Coming soon',
+          href: '#',
+        },
+      },
+      {
+        title: 'Power',
+        subtitle: 'Optimal choice for companies',
+        price: 69,
+        period: 'Per Month',
+        items: [
+          {
+            description: 'All Professional Features +',
+          },
+          {
+            description: 'Collaborate with others',
+          },
+          {
+            description: 'Web in a box - blogs, websites downloaded and stored offline',
+          },
+          {
+            description: 'Search all online files: Google Drive, Dropbox, OneDrive, etc',
+          },
+          {
+            description: 'Search all local files: unlimited hard disks and USB drives',
+          },
+          {
+            description: '24 hour email support',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Coming Soon',
+          href: '#',
+        },
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+<!-- 
+  <FAQs
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'Is AstroWind compatible with the latest versions of Astro and Tailwind CSS?',
+        description:
+          'Yes, AstroWind is designed to be compatible with the latest versions of both Astro and Tailwind CSS. This ensures that you can harness the full capabilities of these technologies while benefiting from the features offered by AstroWind.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'Can I use AstroWind for both personal and commercial projects?',
+        description: `Certainly! AstroWind is versatile and can be used for a wide range of projects, including both personal and commercial endeavors. Whether you're building a professional portfolio, launching a startup, or creating a marketing website, AstroWind has you covered.`,
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'What level of coding knowledge is required to use AstroWind?',
+        description:
+          'While some familiarity with HTML, CSS, and web development concepts is helpful, the user-friendly interface and customization options allow those with limited coding experience to create impressive websites. For more advanced users, AstroWind offers extensive customization capabilities.',
+        icon: 'tabler:chevrons-right',
+      },
+      {
+        title: 'Is customer support available for AstroWind users seeking guidance?',
+        description: `Absolutely, our dedicated customer support team is here to assist you with any questions or challenges you may encounter. Feel free to reach out to us through our support channels, and we'll be happy to provide the help you need.`,
+        icon: 'tabler:chevrons-right',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FAQs> -->
+
+  <!-- Steps2 Widget ****************** -->
+<!-- 
+  <Steps2
+    title="Reach out to us"
+    subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
+    callToAction={{
+      text: 'Contact us',
+      href: '/',
+    }}
+    items={[
+      {
+        title: 'Email us',
+        description: 'contact@support.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Call us',
+        description: '+1 (234) 567-890',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Follow us',
+        description: '@example',
+        icon: 'tabler:brand-twitter',
+      },
+    ]}
+  /> -->
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <!-- <BlogLatestPosts
+    id="blog"
+    title="Stay informed with AstroWind's blog"
+    information={`Explore our collection of articles, guides, and tutorials on web development, design trends, and using AstroWind effectively for your projects.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts> -->
+</Layout>
