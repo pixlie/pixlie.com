@@ -4,16 +4,18 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Features from '~/components/widgets/Features.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import Content from '~/components/widgets/Content.astro';
-import Pricing from '~/components/widgets/Pricing.astro';
+// import Steps2 from '~/components/widgets/Steps2.astro';
+// import Content from '~/components/widgets/Content.astro';
+// import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { headerData } from '~/navigation';
-import FAQs from '~/components/widgets/FAQs.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+// import FAQs from '~/components/widgets/FAQs.astro';
+// import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
-  title: 'SaaS Landing Page',
+  title: 'Pixlie AI',
+  description: 'Pixlie AI is a source-available solution offering businesses an efficient alternative to vector databases for Retrieval Augmented Generation (RAG) and other advanced data processing techniques.'
 };
 ---
 
@@ -23,14 +25,11 @@ const metadata = {
       {...headerData}
       actions={[
         {
-          variant: 'secondary',
-          text: 'Login',
-          href: '#',
-        },
-        {
           variant: 'primary',
-          text: 'Sign Up',
-          href: '#',
+          text: 'Get Started',
+          href: 'https://github.com/pixlie/PixlieAI',
+          target: '_blank',
+          icon: 'tabler:brand-github',
         },
       ]}
       isSticky
@@ -40,27 +39,24 @@ const metadata = {
   <!-- Hero2 Widget ******************* -->
 
   <Hero2
-    tagline="SaaS Web Demo"
+    tagline="Pixlie AI"
     actions={[
-      { variant: 'primary', target: '_blank', text: 'Get Started', href: 'https://github.com/onwidget/astrowind' },
+      { variant: 'primary', target: '_blank', text: 'Get Started', href: 'https://github.com/pixlie/PixlieAI' },
       { text: 'Learn more', href: '#features' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'AstroWind Hero Image',
+      src: '/images/graph-concept.jpg',
+      alt: 'PixlieAI',
     }}
   >
     <Fragment slot="title">
-      Simplify web design with Astrowind: <br /> your ultimate <span class="text-accent dark:text-white highlight"
-        >SaaS</span
-      > companion<br />
+      Empower Your Products with <span class="text-accent dark:text-white highlight"
+        >Graph-Driven AI</span
+      > <br />
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        Elevate your website creation process with <span class="font-semibold">AstroWind</span>'s SaaS solutions.</span
-      >
-      Seamlessly blend the power of Astro 4.0 and Tailwind CSS to craft websites that resonate with your brand and audience.
+        Pixlie AI delivers <span class="font-semibold">powerful data analysis</span> through Graph theory, enabling seamless integration of advanced AI into your business without complex development.
     </Fragment>
   </Hero2>
 
@@ -68,48 +64,64 @@ const metadata = {
 
   <Features
     id="features"
-    title="Why choose AstroWind?"
-    subtitle="Each of the following features enhances AstroWind's value proposition."
-    columns={2}
+    tagline="Features"
+    title="How Pixlie AI Works for You"
+    subtitle="Pixlie AI is a powerful framework designed to seamlessly integrate into your products. By sharing your data and customizing the graph through the API, Pixlie AI manages the entire process for you."
     items={[
       {
-        title: 'Integration of Astro 4.0 and Tailwind CSS',
+        title: 'Efficient Data Storage with RocksDB',
         description:
-          'Offers a powerful combination that enhances both the development process and the end-user experience. Also, allows to build dynamic and visually stunning websites with optimized performance.',
-        icon: 'tabler:layers-union',
+          'Pixlie AI securely stores your data using RocksDB, a high-performance storage engine optimized for fast reads and writes, ensuring your data is always available and scalable.',
+        icon: 'tabler:database',
       },
       {
-        title: 'Versatile design for startups, small businesses, and more',
-        description: `Easily customize AstroWind to harmonize with the unique branding and identity of your venture. AstroWind's versatile design adapts to suit your needs.`,
-        icon: 'tabler:artboard',
-      },
-      {
-        title: 'Effortless customization for portfolios and marketing sites',
+        title: 'APIs for Seamless Data Ingestion',
         description:
-          'With intuitive customization, easily showcase portfolio pieces, case studies, project highlights, and relevant content. Ideal for creative professionals and businesses looking to highlight their expertise.',
-        icon: 'tabler:writing',
+          'With simple APIs, you can send your data to Pixlie AI just like you would with a search engine. These APIs handle large volumes of data efficiently, ensuring smooth integration.',
+        icon: 'tabler:cloud-upload',
       },
       {
-        title: 'Optimized landing pages and engaging blogs',
-        description: `Landing pages are strategically designed to captivate visitors and prompt specific actions. Additionally, the blog creation feature empowers sharing insights, engaging the audience.`,
-        icon: 'tabler:podium',
+        title: 'Flexible Graph Creation and Management',
+        description:
+          'Pixlie AI automatically creates and manages a dynamic knowledge graph from your data, enabling you to visualize and explore complex relationships across datasets with ease.',
+        icon: 'tabler:share-3',
       },
       {
-        title: 'Fast loading times and production-ready code',
-        description: `Using Astro 4.0 ensures fast loading and seamless rendering, enhancing browsing. The code follows best practices, improving user experience, SEO, and reducing bounce rates.`,
-        icon: 'tabler:rocket',
+        title: 'AI Model Integration via API Keys',
+        description:
+          'Integrate your preferred Large Language Models effortlessly by providing your API keys. This allows you to leverage the latest AI capabilities in combination with Pixlie’s graph structure.',
+        icon: 'tabler:robot',
       },
       {
-        title: 'SEO-optimized structure for enhanced visibility',
-        description: `Follows SEO best practices with clean code, semantic HTML markup, and fast loading, enhancing search engine rankings. AstroWind's SEO structure ensures visibility to potential customers and clients.`,
-        icon: 'tabler:eyeglass',
+        title: 'Entity and Relationship Extraction',
+        description:
+          "Pixlie AI uses advanced techniques to extract entities and relationships from your data, transforming raw information into structured knowledge that enhances decision-making.",
+        icon: 'tabler:vector-triangle',
+      },
+      {
+        title: 'Graph Enrichment with Key Insights',
+        description:
+          'Once entities and relationships are extracted, Pixlie AI enriches the graph by adding new connections, making your data more interconnected and improving the accuracy of insights.',
+        icon: 'tabler:zoom-in-area',
+      },
+      {
+        title: 'Natural Language and API Querying',
+        description:
+          'Whether through APIs or natural language input, querying the graph is intuitive and flexible, allowing you to get accurate answers from your data without complex syntax.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Comprehensive Graph Browsing',
+        description:
+          'Pixlie AI provides an API to browse your entire graph and its related data, offering a complete, connected view of your knowledge base for better analysis and discovery.',
+        icon: 'tabler:chart-dots',
       },
     ]}
   />
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     title="Use cases"
     subtitle="Discover how AstroWind's versatile template serves as the ideal solution for various use cases, providing tailored solutions to drive success."
     isReversed
@@ -138,11 +150,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isAfterContent={true}
     items={[
       {
@@ -168,11 +180,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     isAfterContent={true}
     items={[
@@ -199,11 +211,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     items={[
       {
         title: 'Description:',
@@ -228,11 +240,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Pricing Widget ******************* -->
 
-  <Pricing
+  <!-- <Pricing
     title="Flexible pricing plans"
     prices={[
       {
@@ -271,11 +283,11 @@ const metadata = {
         },
       },
     ]}
-  />
+  /> -->
 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
+  <!-- <FAQs
     title="Frequently Asked Questions"
     items={[
       {
@@ -305,11 +317,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </FAQs>
+  </FAQs> -->
 
   <!-- Steps2 Widget ****************** -->
 
-  <Steps2
+  <!-- <Steps2
     title="Reach out to us"
     subtitle="Have questions? Feel free to contact us using the form below. We're here to help!"
     callToAction={{
@@ -333,11 +345,11 @@ const metadata = {
         icon: 'tabler:brand-twitter',
       },
     ]}
-  />
+  /> -->
 
   <!-- BlogLatestPost Widget **************** -->
 
-  <BlogLatestPosts
+  <!-- <BlogLatestPosts
     id="blog"
     title="Stay informed with AstroWind's blog"
     information={`Explore our collection of articles, guides, and tutorials on web development, design trends, and using AstroWind effectively for your projects.`}
@@ -345,5 +357,27 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </BlogLatestPosts>
+  </BlogLatestPosts> -->
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact us',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      See Pixlie AI in Action
+      <!-- Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span> -->
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Reach out to us for a personalized demo to see how you Pixlie AI can empower your business. 
+    </Fragment>
+  </CallToAction>
+
 </Layout>
