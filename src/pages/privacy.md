@@ -43,7 +43,7 @@ You means the individual accessing or using the Service, or the company, or othe
 ## Collecting and Using Your Personal Data
 ### Types of Data Collected
 #### Personal Data
-If you decide to reach out to us via our contact form, this data is collected:
+If you decide to reach out to us via our contact form on our website, this data is collected:
 
 * Email address
 * First name and last name
@@ -63,6 +63,8 @@ The privacy of our website visitors is important to us so we do not track any in
 We run the Plausible Analytics script to collect some anonymous usage data for statistical purposes. The goal is to track overall trends in our website traffic, it is not to track individual visitors. All the data is in aggregate only. No personal data is collected.
 
 Data collected includes referral sources, top pages, visit duration, information from the devices (device type, operating system, country and browser) used during the visit and more. 
+
+We do not collect any data for our Desktop app Dwata. 
 
 ## Disclosure of Your Personal Data
 ### Law enforcement
