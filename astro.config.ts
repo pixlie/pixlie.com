@@ -87,4 +87,8 @@ export default defineConfig({
       },
     },
   },
+
+  // https://github.com/withastro/astro/pull/9080
+  // https://docs.astro.build/en/reference/configuration-reference/#trailingslash
+  trailingSlash: 'never',
 });

@@ -19,6 +19,8 @@ interface IInputProps {
   label?: string;
   autocomplete?: string;
   placeholder?: string;
+  value?: string | number | string[] | undefined;
+  onChange?: (e: Event) => void | undefined;
 }
 
 const Input: Component<IInputProps> = (props) => {
@@ -32,6 +34,8 @@ const Input: Component<IInputProps> = (props) => {
         autocomplete={props.autocomplete}
         placeholder={props.placeholder}
         class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+        value={props.value}
+        onChange={props.onChange}
       />
     </div>
   );
@@ -42,6 +46,8 @@ interface ITextareaProps {
   name?: string;
   placeholder?: string;
   rows?: number;
+  value?: string | number | string[] | undefined;
+  onChange?: (e: Event) => void | undefined;
 }
 
 const Textarea: Component<ITextareaProps> = (props) => {
@@ -54,6 +60,8 @@ const Textarea: Component<ITextareaProps> = (props) => {
         rows={props.rows ? props.rows : 4}
         placeholder={props.placeholder}
         class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+        value={props.value}
+        onChange={props.onChange}
       />
     </div>
   );
