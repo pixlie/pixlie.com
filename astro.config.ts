@@ -15,6 +15,8 @@ import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
+import solidJs from '@astrojs/solid-js';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
@@ -46,13 +48,11 @@ export default defineConfig({
         ],
       },
     }),
-
     ...whenExternalScripts(() =>
       partytown({
         config: { forward: ['dataLayer.push'] },
       })
     ),
-
     compress({
       CSS: true,
       HTML: {
@@ -65,10 +65,10 @@ export default defineConfig({
       SVG: false,
       Logger: 1,
     }),
-
     astrowind({
       config: './src/config.yaml',
     }),
+    solidJs(),
   ],
 
   image: {
@@ -87,4 +87,8 @@ export default defineConfig({
       },
     },
   },
+
+  // https://github.com/withastro/astro/pull/9080
+  // https://docs.astro.build/en/reference/configuration-reference/#trailingslash
+  trailingSlash: 'never',
 });
