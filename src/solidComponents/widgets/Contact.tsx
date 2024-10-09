@@ -1,4 +1,4 @@
-import { createSignal, type Component } from 'solid-js';
+import { createResource, createSignal, type Component } from 'solid-js';
 import { Input, Textarea } from '../ui/Form';
 
 interface IFormData {
@@ -17,6 +17,17 @@ const Contact: Component = () => {
     email: '',
     message: '',
   });
+  const sendFormData = async () => {
+    const reponse = await fetch("https://website-api.pixlie.com/contact", {
+      method: "POST",
+      body: JSON.stringify(formData()),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(reponse);
+  }
+  const [_, {refetch: submitFormData}] = createResource(sendFormData)
 
   const handleChange = (e: Event) => {
     const target = e.target as HTMLInputElement | HTMLTextAreaElement;
@@ -25,7 +36,7 @@ const Contact: Component = () => {
   };
 
   const handleSubmit = () => {
-    console.log('Submitted');
+    submitFormData();
   };
 
   return (
