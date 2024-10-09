@@ -18,6 +18,9 @@ const Contact: Component = () => {
     message: '',
   });
   const sendFormData = async () => {
+    if (!formData().name || !formData().email) {
+      return;
+    }
     const reponse = await fetch("https://website-api.pixlie.com/contact", {
       method: "POST",
       body: JSON.stringify(formData()),
@@ -25,7 +28,7 @@ const Contact: Component = () => {
         "Content-Type": "application/json",
       },
     });
-    console.log(reponse);
+    console.log(await reponse.json());
   }
   const [_, {refetch: submitFormData}] = createResource(sendFormData)
 
@@ -35,8 +38,9 @@ const Contact: Component = () => {
     console.log(formData());
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: Event) => {
     submitFormData();
+    e.preventDefault();
   };
 
   return (
