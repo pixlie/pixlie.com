@@ -91,4 +91,10 @@ export default defineConfig({
   // https://github.com/withastro/astro/pull/9080
   // https://docs.astro.build/en/reference/configuration-reference/#trailingslash
   trailingSlash: 'never',
+
+  // This is so that we do not see trailing slashes in the URLs
+  // https://docs.astro.build/en/reference/configuration-reference/#buildformat
+  build: {
+    format: 'file',
+  }
 });
