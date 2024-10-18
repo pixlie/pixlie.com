@@ -1,0 +1,21 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Demo from '~/solidComponents/widgets/Demo';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper id="form" containerClass="max-w-7xl mx-auto">
+    <Headline
+      title="Trends in the startup ecosystem"
+      subtitle="This small demo of the capabilities Pixlie AI. If you want full access please sign up for our beta."  
+    />
+
+     <Demo client:only />
+  </WidgetWrapper>
+</Layout>

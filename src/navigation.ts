@@ -115,6 +115,10 @@ export const headerData = {
       href: '/ai',
     },
     {
+      text: 'Demo',
+      href: '/demo',
+    },
+    {
       text: 'Dwata',
       href: '/dwata',
     },
