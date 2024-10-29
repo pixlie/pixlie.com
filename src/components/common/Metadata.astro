@@ -17,7 +17,7 @@ export interface Props extends MetaData {
 const {
   title,
   ignoreTitleTemplate = false,
-  canonical = String(getCanonical(String(Astro.url.pathname))),
+  canonical = String(getCanonical(String(Astro.url.pathname))).replace(/\.html$/, ''),
   robots = {},
   description,
   openGraph = {},
