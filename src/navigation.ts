@@ -172,6 +172,12 @@ export const footerData = {
         // { text: 'Shop', href: '#' },
       ],
     },
+    {
+      title: 'Insights',
+      links: [
+        { text: 'Startups', href: '/insights/startups' },
+      ],
+    }
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },

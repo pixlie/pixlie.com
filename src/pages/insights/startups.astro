@@ -1,0 +1,16 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import PasswordProtected from '~/components/ui/PasswordProtected.astro';
+import Headline from '~/components/ui/Headline.astro';
+
+const metadata = {
+  title: 'Startup Insights',
+};
+---
+
+<Layout metadata={metadata}>
+  <PasswordProtected>
+  <Headline   title="Startup Insights"
+  subtitle="Powered by <b>Pixlie AI</b>" />
+  </PasswordProtected>
+</Layout>
