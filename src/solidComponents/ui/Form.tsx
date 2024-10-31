@@ -33,7 +33,7 @@ const Input: Component<IInputProps> = (props) => {
         id={props.name}
         autocomplete={props.autocomplete}
         placeholder={props.placeholder}
-        class="py-3 px-4 outline-none block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+        class="mt-3 py-3 px-4 outline-none block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
         value={props.value}
         onChange={props.onChange}
       />
@@ -59,7 +59,7 @@ const Textarea: Component<ITextareaProps> = (props) => {
         name={props.name ? props.name : 'message'}
         rows={props.rows ? props.rows : 4}
         placeholder={props.placeholder}
-        class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+        class="mt-3 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
         value={props.value}
         onChange={props.onChange}
       />
@@ -80,7 +80,7 @@ const Dropdown: Component<IDropdownProps> = (props) => {
   return (
     <div class="mb-6">
       {!!props.label && <Label for={props.name} label={props.label} />}
-      <div class="px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900">
+      <div class="mt-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900">
         <select
           id={props.name}
           name={props.name}
