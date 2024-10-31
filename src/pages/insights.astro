@@ -1,0 +1,32 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import ContactSolid from '~/solidComponents/widgets/Contact';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Insights from '~/components/widgets/Insights.astro';
+import PasswordProtected from '~/components/ui/PasswordProtected.astro';
+
+const metadata = {
+  title: 'Insights',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Team Widget ************** -->
+  <Insights
+  title="Startup Insights"
+  subtitle="Powered by <b>Pixlie AI</b>"
+  />
+  
+  <PasswordProtected>
+    <Insights
+  title="Startup Insights"
+  subtitle="Powered by <b>Pixlie AI</b>"
+  />
+  </PasswordProtected>
+
+
+</Layout>
