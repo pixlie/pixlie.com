@@ -1,7 +1,9 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import PasswordProtected from '~/components/ui/PasswordProtected.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
+import Insights from '~/solidComponents/widgets/Insights';
 
 const metadata = {
   title: 'Startup Insights',
@@ -10,7 +12,9 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <PasswordProtected>
-  <Headline   title="Startup Insights"
-  subtitle="Powered by <b>Pixlie AI</b>" />
+    <WidgetWrapper id="form" containerClass="max-w-7xl mx-auto">
+      <Headline title="Startup Insights" subtitle="Powered by <b>Pixlie AI</b>" />
+      <Insights />
+    </WidgetWrapper>
   </PasswordProtected>
 </Layout>
