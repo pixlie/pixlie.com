@@ -88,8 +88,9 @@ const Insights: Component = () => {
           label="Funding"
           name="funding"
           min={0}
-          max={100000000}
+          max={100}
           prefix="$"
+          suffix="M +"
           value={formData().funding}
           onChange={handleChange}
         />
@@ -98,8 +99,9 @@ const Insights: Component = () => {
           label="Revenue"
           name="revenue"
           min={0}
-          max={100000000}
+          max={100}
           prefix="$"
+          suffix="M +"
           value={formData().revenue}
           onChange={handleChange}
         />
@@ -109,7 +111,7 @@ const Insights: Component = () => {
           name="runway"
           min={0}
           max={100}
-          suffix=" months"
+          suffix=" months +"
           value={formData().runway}
           onChange={handleChange}
         />

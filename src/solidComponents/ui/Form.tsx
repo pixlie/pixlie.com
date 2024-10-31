@@ -128,12 +128,10 @@ const Slider: Component<ISliderProps> = (props) => {
         <span>
           {props.prefix}
           {props.min}
-          {props.suffix}
         </span>
         <span>
           {props.prefix}
           {props.max}
-          {'+'}
           {props.suffix}
         </span>
       </div>
