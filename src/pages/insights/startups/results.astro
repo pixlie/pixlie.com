@@ -8,6 +8,7 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Insights from '~/solidComponents/widgets/Insights';
 import PercentageCircles from '~/solidComponents/data/PercentageCircles';
+import Card from '~/solidComponents/ui/Card';
 import Button from '~/components/ui/Button.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -18,9 +19,9 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <WidgetWrapper containerClass="max-w-7xl mx-auto mb-12">
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <div class="mb-8">
-      <Headline title="Your Results" subtitle="Save your results for later" />
+      <Headline title="Your Results" subtitle="Save your results for later or share them with a friend!" />
       <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
         <input
           placeholder="Email"
@@ -30,56 +31,20 @@ const metadata = {
       </div>
     </div>
 
-    <hr />
-
-    <div style={{ height: '90dvh' }} class="flex flex-col justify-center items-center gap-12 pb-8">
-      <Headline title="Startups with Female Founders" subtitle="Startups with Female Founders are 100% better!" />
-      <PercentageCircles
-        data={[
-          { label: 'Pre-Seed', value: 50 },
-          { label: 'Seed', value: 40 },
-          { label: 'Series A', value: 20 },
-          { label: 'Series B', value: 15 },
-          { label: 'Series C', value: 8 },
-        ]}
-      />
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 my-32">
+      <Card emoji="🏆" text="Your startup has more female founders than other AI startups" />
+      <Card emoji="💰" text="There are 7 investors interested in your startup" />
+      <Card emoji="🚨" text="__________________ __________________" />
+      <Card emoji="📈" text="__________________ __________________" />
+      <Card emoji="🌎" text="__________________ __________________" />
+      <Card emoji="✨" text="__________________ __________________" />
+      <Card emoji="🖥️" text="__________________ __________________" />
+      <Card emoji="💪" text="__________________ __________________" />
+      <Card emoji="📍" text="__________________ __________________" />
     </div>
 
-    <div style={{ height: '90dvh' }} class="flex flex-col justify-center items-center gap-12 pb-20">
-      <Headline title="Team Size" subtitle="The average team size is 50 people at Series A." />
-      <PercentageCircles
-        data={[
-          { label: 'Pre-Seed', value: 3 },
-          { label: 'Seed', value: 20 },
-          { label: 'Series A', value: 50 },
-          { label: 'Series B', value: 100 },
-          { label: 'Series C', value: 200 },
-        ]}
-      />
-    </div>
-
-    <div style={{ height: '90dvh' }} class="flex flex-col justify-center items-center gap-12">
-      <Headline title="Number of Founders" subtitle="The optimal number of founders is 4, but most startups have 2." />
-      <PercentageCircles
-        data={[
-          { label: '1', value: 15 },
-          { label: '2', value: 30 },
-          { label: '3', value: 35 },
-          { label: '4', value: 15 },
-          { label: '5', value: 5 },
-        ]}
-      />
+    <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center">
+      <a href="/insights/startups/form" class="btn btn-primary"> Try Again </a>
     </div>
   </WidgetWrapper>
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Try Again',
-        href: '/insights/startups/form',
-      },
-    ]}
-  >
-    <Fragment slot="title"> Want more insights about your startup? </Fragment>
-  </CallToAction>
 </Layout>
