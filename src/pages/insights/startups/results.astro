@@ -10,6 +10,7 @@ import Insights from '~/solidComponents/widgets/Insights';
 import PercentageCircles from '~/solidComponents/data/PercentageCircles';
 import Button from '~/components/ui/Button.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Startup Insights',
@@ -18,7 +19,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto mb-12">
-    <div class="mb-10">
+    <div class="mb-8">
       <Headline title="Your Results" subtitle="Save your results for later" />
       <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
         <input
@@ -70,4 +71,15 @@ const metadata = {
       />
     </div>
   </WidgetWrapper>
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Try Again',
+        href: '/insights/startups/form',
+      },
+    ]}
+  >
+    <Fragment slot="title"> Want more insights about your startup? </Fragment>
+  </CallToAction>
 </Layout>
