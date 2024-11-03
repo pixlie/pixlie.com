@@ -90,3 +90,43 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+.text-scroller {
+  position: relative;
+  height: 7em;
+  overflow: hidden;
+  /* border-width: 1px; */
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+.slide-out {
+  animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
