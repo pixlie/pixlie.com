@@ -20,29 +20,28 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
-    <div class="mb-8">
-      <Headline title="Your Results" subtitle="Save your results for later or share them with a friend!" />
-      <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-        <input
-          placeholder="Email"
-          class="py-3 px-4 outline-none block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
-        />
-        <Button variant="primary">Send</Button>
-      </div>
+    <Headline title="Your Results" subtitle="Save your results for later or share them with a friend!" />
+    <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-2">
+      <input
+        placeholder="Email"
+        class="py-3 px-4 outline-none block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+      />
+      <Button variant="primary">Send</Button>
     </div>
+  </WidgetWrapper>
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <Card emoji="🏆" text="Your startup has more female founders than other AI startups" />
+    <Card emoji="💰" text="There are 7 investors interested in your startup" />
+    <Card emoji="🚨" text="__________________ __________________" />
+    <Card emoji="📈" text="__________________ __________________" />
+    <Card emoji="🌎" text="__________________ __________________" />
+    <Card emoji="✨" text="__________________ __________________" />
+    <Card emoji="🖥️" text="__________________ __________________" />
+    <Card emoji="💪" text="__________________ __________________" />
+    <Card emoji="📍" text="__________________ __________________" />
+  </div>
 
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 my-32">
-      <Card emoji="🏆" text="Your startup has more female founders than other AI startups" />
-      <Card emoji="💰" text="There are 7 investors interested in your startup" />
-      <Card emoji="🚨" text="__________________ __________________" />
-      <Card emoji="📈" text="__________________ __________________" />
-      <Card emoji="🌎" text="__________________ __________________" />
-      <Card emoji="✨" text="__________________ __________________" />
-      <Card emoji="🖥️" text="__________________ __________________" />
-      <Card emoji="💪" text="__________________ __________________" />
-      <Card emoji="📍" text="__________________ __________________" />
-    </div>
-
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center">
       <a href="/insights/startups/form" class="btn btn-primary"> Try Again </a>
     </div>
