@@ -11,6 +11,7 @@ import PercentageCircles from '~/solidComponents/data/PercentageCircles';
 import Button from '~/components/ui/Button.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import TextCycle from '~/solidComponents/ui/TextCycle';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Startup Insights',
@@ -73,4 +74,20 @@ const metadata = {
       ]}
     />
   </div>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '/insights/startups/form',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Want insights about your startup?
+      <!-- Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span> -->
+    </Fragment>
+    <Fragment slot="subtitle"> See how your startup compares </Fragment>
+  </CallToAction>
 </Layout>
