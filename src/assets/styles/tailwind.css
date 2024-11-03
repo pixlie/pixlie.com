@@ -93,9 +93,7 @@
 
 .text-scroller {
   position: relative;
-  height: 7em;
   overflow: hidden;
-  /* border-width: 1px; */
 }
 
 .line {
