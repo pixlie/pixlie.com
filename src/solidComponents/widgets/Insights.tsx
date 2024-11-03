@@ -125,7 +125,9 @@ const Insights: Component = () => {
         />
 
         <div class="mt-10 grid">
-          <button class="btn btn-primary">See Results</button>
+          <a href="/insights/startups/results" class="btn btn-primary">
+            See Results
+          </a>
         </div>
 
         {/* <Input label="Name" name="name" placeholder="Name" value={formData().name} onChange={handleChange} />

@@ -1,0 +1,35 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Hero4 from '~/components/widgets/Hero4.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import PasswordProtected from '~/components/ui/PasswordProtected.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Insights from '~/solidComponents/widgets/Insights';
+import PercentageCircles from '~/solidComponents/data/PercentageCircles';
+import Button from '~/components/ui/Button.astro';
+import Stats from '~/components/widgets/Stats.astro';
+
+const metadata = {
+  title: 'Startup Insights',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero4
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Demo',
+        href: '/insights/startups',
+      },
+    ]}
+  >
+    <Fragment slot="title"> AI Insights </Fragment>
+    <Fragment slot="subtitle"
+      >Powered by <a href="/ai" class="font-bold text-primary dark:text-white hover:text-secondary">Pixlie AI</a
+      ></Fragment
+    >
+  </Hero4>
+</Layout>
