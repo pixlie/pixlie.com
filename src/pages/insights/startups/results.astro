@@ -18,7 +18,16 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <WidgetWrapper containerClass="max-w-7xl mx-auto mb-12">
-    <Headline title="Your Results" />
+    <div class="mb-10">
+      <Headline title="Your Results" subtitle="Save your results for later" />
+      <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
+        <input
+          placeholder="Email"
+          class="py-3 px-4 outline-none block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+        />
+        <Button variant="primary">Send</Button>
+      </div>
+    </div>
 
     <hr />
 
