@@ -19,7 +19,7 @@ const TextCycle: Component = () => {
   });
 
   return (
-    <div class="text-scroller h-20 md:h-28">
+    <div class="text-scroller h-18 md:h-28">
       <h1
         class={`text-6xl md:text-8xl leading-tighter tracking-tighter font-heading dark:text-gray-200 line ${transitioning() ? 'slide-out' : 'slide-in'}`}
       >
