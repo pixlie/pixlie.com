@@ -134,7 +134,7 @@ const Insights: Component = () => {
       </div>
       <div class="mt-12 max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center">
         <a href="/insights/startups/results" class="btn btn-primary">
-          See Results
+          Get Insights
         </a>
       </div>
     </>
