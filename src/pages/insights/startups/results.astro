@@ -48,15 +48,15 @@ const metadata = {
 
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <div class="flex flex-col justify-center items-center gap-12">
-      <Headline title="X% of [Industry] startups received funding" />
+      <Headline title="X% of [Industry] startups received funding this [TimeFrame]" />
       <PercentageCircles
         data={[
-          { label: 'IndustryName', value: 10 },
-          { label: 'IndustryName', value: 18 },
-          { label: 'IndustryName', value: 15 },
-          { label: 'IndustryName', value: 22 },
-          { label: 'IndustryName', value: 5 },
-          { label: 'IndustryName', value: 13 },
+          { label: 'Stage', value: 10 },
+          { label: 'Stage', value: 18 },
+          { label: 'Stage', value: 15 },
+          { label: 'Stage', value: 22 },
+          { label: 'Stage', value: 5 },
+          { label: 'Stage', value: 13 },
         ]}
       />
     </div>
@@ -64,7 +64,7 @@ const metadata = {
 
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <div class="flex flex-col justify-center items-center gap-12">
-      <Headline title="X investors recently funded [Stage/Industry] startups" />
+      <Headline title="X investors recently funded [Stage] startups" />
       <List
         data={[
           { label: 'InvestorName', value: 1 },
@@ -84,10 +84,10 @@ const metadata = {
 
   <WidgetWrapper containerClass="max-w-4xl mx-auto">
     <div class="flex flex-col justify-center items-center gap-12">
-      <Headline title="[CompanyName] has X competitors" />
+      <Headline title="[CompanyName] has X new competitors" />
       <PercentageWords
         data={[
-          { label: 'CompanyName', value: 5 },
+          { label: 'CompetitorName', value: 5 },
           { label: 'CompetitorName', value: 40 },
           { label: 'CompetitorName', value: 60 },
           { label: 'CompetitorName', value: 3 },
