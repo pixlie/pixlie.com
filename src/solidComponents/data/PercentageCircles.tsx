@@ -128,7 +128,7 @@ const PercentageCircles: Component = ({ data }: { data: IPercentageCircle[] }) =
                 // "max-width": `${radius}px`,
                 'font-size': `${radius / 4}px`,
               }}
-              class="text text-center font-bold px-4"
+              class="text text-center px-4"
             >
               {label}
             </p>

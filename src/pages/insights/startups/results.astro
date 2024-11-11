@@ -8,6 +8,8 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import Insights from '~/solidComponents/widgets/Insights';
 import PercentageCircles from '~/solidComponents/data/PercentageCircles';
+import PercentageWords from '~/solidComponents/data/PercentageWords';
+import List from '~/solidComponents/data/List';
 import Card from '~/solidComponents/ui/Card';
 import Button from '~/components/ui/Button.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -29,6 +31,8 @@ const metadata = {
       <Button variant="primary">Send</Button>
     </div>
   </WidgetWrapper>
+
+  <!-- <WidgetWrapper containerClass="max-w-7xl mx-auto">
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-8 sm:px-0">
     <Card emoji="🏆" text="Your startup has more female founders than other AI startups" />
     <Card emoji="💰" text="There are 7 investors interested in your startup" />
@@ -40,10 +44,71 @@ const metadata = {
     <Card emoji="💪" text="__________________ __________________" />
     <Card emoji="📍" text="__________________ __________________" />
   </div>
+  </WidgetWrapper> -->
+
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <div class="flex flex-col justify-center items-center gap-12">
+      <Headline title="X% of [Industry] startups received funding" />
+      <PercentageCircles
+        data={[
+          { label: 'IndustryName', value: 10 },
+          { label: 'IndustryName', value: 18 },
+          { label: 'IndustryName', value: 15 },
+          { label: 'IndustryName', value: 22 },
+          { label: 'IndustryName', value: 5 },
+          { label: 'IndustryName', value: 13 },
+        ]}
+      />
+    </div>
+  </WidgetWrapper>
+
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <div class="flex flex-col justify-center items-center gap-12">
+      <Headline title="X investors recently funded [Stage/Industry] startups" />
+      <List
+        data={[
+          { label: 'InvestorName', value: 1 },
+          { label: 'InvestorName', value: 1 },
+          { label: 'InvestorName', value: 1 },
+          { label: 'InvestorName', value: 1 },
+          { label: 'InvestorName', value: 1 },
+          { label: 'InvestorName', value: 1 },
+          { label: 'InvestorName', value: 1 },
+          { label: 'InvestorName', value: 1 },
+          { label: 'InvestorName', value: 1 },
+          { label: 'InvestorName', value: 1 },
+        ]}
+      />
+    </div>
+  </WidgetWrapper>
+
+  <WidgetWrapper containerClass="max-w-4xl mx-auto">
+    <div class="flex flex-col justify-center items-center gap-12">
+      <Headline title="[CompanyName] has X competitors" />
+      <PercentageWords
+        data={[
+          { label: 'CompanyName', value: 5 },
+          { label: 'CompetitorName', value: 40 },
+          { label: 'CompetitorName', value: 60 },
+          { label: 'CompetitorName', value: 3 },
+          { label: 'CompetitorName', value: 65 },
+          { label: 'CompetitorName', value: 50 },
+          { label: 'CompetitorName', value: 7 },
+          { label: 'CompetitorName', value: 25 },
+          { label: 'CompetitorName', value: 18 },
+          { label: 'CompetitorName', value: 40 },
+          { label: 'CompetitorName', value: 2 },
+          { label: 'CompetitorName', value: 10 },
+          { label: 'CompetitorName', value: 43 },
+          { label: 'CompetitorName', value: 61 },
+        ]}
+      />
+    </div>
+  </WidgetWrapper>
 
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center">
-      <a href="/insights/startups/form" class="btn btn-primary"> Try Again </a>
+      <a href="/insights/startups/custom" class="btn btn-primary"> Try Again </a>
     </div>
   </WidgetWrapper>
 </Layout>
