@@ -111,7 +111,7 @@ const PercentageCircles: Component = ({ data }: { data: IPercentageCircle[] }) =
       >
         {circles?.map(({ x, y, radius, label }) => (
           <div
-            class="absolute flex rounded-full items-center justify-center backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow"
+            class="absolute flex rounded-full items-center justify-center text-xl font-bold rounded-full bg-blue-100 text-primary shadow"
             style={{
               left: `${x - radius}px`,
               top: `${y - radius}px`,

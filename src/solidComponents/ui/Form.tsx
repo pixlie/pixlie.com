@@ -101,9 +101,9 @@ const Dropdown: Component<IDropdownProps> = (props) => {
 interface ISliderProps {
   label?: string;
   name?: string;
-  value?: number;
-  min?: number;
-  max?: number;
+  value: number;
+  min: number;
+  max: number;
   step?: number;
   prefix?: string;
   suffix?: string;
@@ -116,27 +116,79 @@ const Slider: Component<ISliderProps> = (props) => {
       {!!props.label && <Label for={props.name} label={props.label} />}
       <input
         type="range"
-        id="slider"
+        id={props.name}
         name={props.name}
         min={props.min}
         max={props.max}
+        step={props.step}
         onChange={props.onChange}
         value={props.value}
-        class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+        class="py-3 block w-full"
       />
-      <div class="flex justify-between">
-        <span>
-          {props.prefix}
-          {props.min}
-        </span>
-        <span>
-          {props.prefix}
-          {props.max}
-          {props.suffix}
+      <div class="flex justify-between relative">
+        <span />
+        <span
+          class="absolute"
+          style={{
+            left: `${(props.value / props.max) * 100}%`,
+            transform: `translateX(-${props.value}%)`,
+            top: '-8px',
+          }}
+        >
+          {props.value}
+          {props.value >= props.max ? '+' : ''}
         </span>
       </div>
     </div>
   );
 };
 
-export { Label, Input, Textarea, Dropdown, Slider };
+interface INumberInputProps {
+  label?: string;
+  name?: string;
+  placeholder?: string;
+  value?: number;
+  onChange?: (e: Event) => void | undefined;
+}
+
+const NumberInput: Component<INumberInputProps> = (props) => {
+  return (
+    <div class="mb-6 w-full">
+      {!!props.label && <Label for={props.name} label={props.label} />}
+      <input
+        type="number"
+        id={props.name}
+        name={props.name}
+        placeholder={props.placeholder}
+        class="mt-3 py-3 px-4 w-full outline-none block text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+        value={props.value}
+        onChange={props.onChange}
+      />
+    </div>
+  );
+};
+
+interface ICheckBoxProps {
+  type?: string;
+  label?: string;
+  name?: string;
+  checked?: boolean;
+  onChange?: (e: Event) => void | undefined;
+}
+
+const CheckBox: Component<ICheckBoxProps> = (props) => {
+  return (
+    <div class="flex gap-2">
+      <input
+        type="checkbox"
+        name={props.name}
+        id={props.name}
+        value={props.checked ? 'true' : undefined}
+        onChange={props.onChange}
+      />
+      <label for={props.label}>{props.label}</label>
+    </div>
+  );
+};
+
+export { Label, Input, Textarea, Dropdown, Slider, NumberInput, CheckBox };

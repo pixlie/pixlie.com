@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
-import CustomStartupInsightsForm from '~/solidComponents/widgets/CustomStartupInsightsForm';
+import InsightsForm from '~/solidComponents/insights/InsightsForm';
 
 const metadata = {
   title: 'Custom Startup Insights',
@@ -15,6 +15,6 @@ const metadata = {
       title="Tell us about your startup"
       subtitle="This information helps us provide custom startup insights <span class='text-white'>✨</span>"
     />
-    <CustomStartupInsightsForm client:idle />
+    <InsightsForm client:idle />
   </WidgetWrapper>
 </Layout>
