@@ -9,7 +9,7 @@ import Headline from '~/components/ui/Headline.astro';
 import Insights from '~/solidComponents/widgets/Insights';
 import PercentageCircles from '~/solidComponents/data/PercentageCircles';
 import PercentageWords from '~/solidComponents/data/PercentageWords';
-import List from '~/solidComponents/data/List';
+import ContactList from '~/solidComponents/data/ContactList';
 import Card from '~/solidComponents/ui/Card';
 import Button from '~/components/ui/Button.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -65,7 +65,7 @@ const metadata = {
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
     <div class="flex flex-col justify-center items-center gap-12">
       <Headline title="X investors recently funded [Stage] startups" />
-      <List
+      <ContactList
         data={[
           { label: 'InvestorName', value: 1 },
           { label: 'InvestorName', value: 1 },
