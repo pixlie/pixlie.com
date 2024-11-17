@@ -20,6 +20,17 @@ enum TypeChoices {
 // };
 
 const Percentage = ({ data }: { data: IData[] }) => {
+  const colors = [
+    'rgb(219 234 254)',
+    'rgb(191 219 254)',
+    'rgb(147 197 253)',
+    'rgb(96 165 250)',
+    'rgb(59 130 246)',
+    'rgb(37 99 235)',
+    'rgb(29 78 216)',
+    'rgb(30 64 175)',
+    'rgb(30 58 138)',
+  ]
   return (
     <div class="flex flex-col h-full w-full md:h-1/2 md:w-1/2 items-center justify-center gap-2">
       <p class="text md:text-xl text-primary text-center font-bold">All Startups</p>
@@ -30,8 +41,9 @@ const Percentage = ({ data }: { data: IData[] }) => {
               All Startups <span class="underline underline-offset-2">{`with ${name}`}</span>
             </p>
             <div
-              class={`flex items-center justify-center aspect-square rounded-full bg-blue-${i + 1}00 shadow`}
+              class={`flex items-center justify-center aspect-square rounded-full shadow`}
               style={{
+                "background-color": colors[i],
                 height: `${value}%`,
                 width: `${value}%`,
               }}
