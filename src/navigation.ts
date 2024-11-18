@@ -169,7 +169,7 @@ export const footerData = {
       links: [
         { text: 'About', href: '/about' },
         { text: 'Contact', href: '/contact' },
-        { text: 'Demo', href: '/demo' },
+        { text: 'Subscribe', href: '/subscribe' },
         // { text: 'Blog', href: '#' },
         // { text: 'Careers', href: '#' },
         // { text: 'Press', href: '#' },
