@@ -16,6 +16,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import TextCycle from '~/solidComponents/ui/TextCycle';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Card from '~/solidComponents/ui/Card';
+import Subscribe from '~/solidComponents/widgets/Subscribe';
 
 const metadata = {
   title: 'Startup Insights',
@@ -125,22 +126,8 @@ const metadata = {
   </WidgetWrapper>
 
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
-    <form method="post" action="https://email.endlessrange.com/subscription/form">
-      <Headline title="Subscribe" />
-      <div class="flex flex-col justify-center items-center">
-        <input type="hidden" name="nonce" />
-
-        <p><input type="email" name="email" required placeholder="E-mail" /></p>
-        <p><input type="text" name="name" placeholder="Name (optional)" /></p>
-
-        <p class="hidden">
-          <input id="cd0e1" type="checkbox" name="l" checked value="cd0e156f-691e-4b89-9f33-4f53304a3e5a" />
-          <label for="cd0e1">Pixlie</label>
-        </p>
-
-        <input type="submit" value="Subscribe " />
-      </div>
-    </form>
+    <Headline title="Want more AI powered insights?" subtitle="Subscribe to get updates on our latest releases." />
+    <Subscribe />
   </WidgetWrapper>
 
   <!--<WidgetWrapper containerClass="max-w-7xl mx-auto">

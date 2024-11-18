@@ -19,6 +19,7 @@ interface IInputProps {
   label?: string;
   autocomplete?: string;
   placeholder?: string;
+  required?: boolean;
   value?: string | number | string[] | undefined;
   onChange?: (e: Event) => void | undefined;
 }
@@ -33,6 +34,7 @@ const Input: Component<IInputProps> = (props) => {
         id={props.name}
         autocomplete={props.autocomplete}
         placeholder={props.placeholder}
+        required={props.required}
         class="mt-3 py-3 px-4 outline-none block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
         value={props.value}
         onChange={props.onChange}
