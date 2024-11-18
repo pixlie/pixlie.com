@@ -7,7 +7,7 @@ interface IData {
 }
 
 enum TypeChoices {
-//   average = 'average',
+  //   average = 'average',
   percentage = 'percentage',
   ratio = 'ratio',
   list = 'list',
@@ -30,7 +30,7 @@ const Percentage = ({ data }: { data: IData[] }) => {
     'rgb(29 78 216)',
     'rgb(30 64 175)',
     'rgb(30 58 138)',
-  ]
+  ];
   return (
     <div class="flex flex-col h-full w-full md:h-1/2 md:w-1/2 items-center justify-center gap-2">
       <p class="text md:text-xl text-primary text-center font-bold">All Startups</p>
@@ -43,7 +43,7 @@ const Percentage = ({ data }: { data: IData[] }) => {
             <div
               class={`flex items-center justify-center aspect-square rounded-full shadow`}
               style={{
-                "background-color": colors[i],
+                'background-color': colors[i],
                 height: `${value}%`,
                 width: `${value}%`,
               }}
@@ -94,7 +94,7 @@ const List = ({ data }: { data: IData[] }) => (
           {name}
         </a>
         {url && (
-          <a href={url} target="_blank" rel="noreferrer" class="text-xl">
+          <a href={url} target="_blank" rel="noreferrer" class="text md:text-xl">
             🔗
           </a>
         )}
