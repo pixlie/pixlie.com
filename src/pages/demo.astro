@@ -17,8 +17,14 @@ const metadata = {
 <Layout metadata={metadata}>
   <Hero4
     actions={[
-      { variant: 'primary', target: '_blank', text: 'Get Started', href: 'https://github.com/pixlie/PixlieAI' },
-      { text: 'Get Updates', href: '#subscribe' },
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: 'https://github.com/pixlie/PixlieAI',
+        target: '_blank',
+        icon: 'tabler:brand-github',
+      },
+      { text: 'Subscribe', href: '#subscribe' },
     ]}
   >
     <Fragment slot="title">Startup Insights</Fragment>
