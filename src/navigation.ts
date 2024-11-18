@@ -126,10 +126,10 @@ export const headerData = {
       text: 'Contact',
       href: '/contact',
     },
-    // {
-    //   text: 'Demo',
-    //   href: '/demo',
-    // },
+    {
+      text: 'Demo',
+      href: '/demo',
+    },
   ],
   // actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
@@ -169,7 +169,7 @@ export const footerData = {
       links: [
         { text: 'About', href: '/about' },
         { text: 'Contact', href: '/contact' },
-        // { text: 'Demo', href: '/demo' },
+        { text: 'Demo', href: '/demo' },
         // { text: 'Blog', href: '#' },
         // { text: 'Careers', href: '#' },
         // { text: 'Press', href: '#' },

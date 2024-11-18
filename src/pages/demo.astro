@@ -6,6 +6,7 @@ import Headline from '~/components/ui/Headline.astro';
 import InsightsResults from '~/solidComponents/insights/InsightsResults';
 import Button from '~/components/ui/Button.astro';
 import TextCycle from '~/solidComponents/ui/TextCycle';
+import Subscribe from '~/solidComponents/widgets/Subscribe';
 
 const metadata = {
   title: 'Demo',
@@ -16,11 +17,8 @@ const metadata = {
 <Layout metadata={metadata}>
   <Hero4
     actions={[
-      {
-        variant: 'primary',
-        text: 'Get Started',
-        href: '#start',
-      },
+      { variant: 'primary', target: '_blank', text: 'Get Started', href: 'https://github.com/pixlie/PixlieAI' },
+      { text: 'Get Updates', href: '#subscribe' },
     ]}
   >
     <Fragment slot="title">Startup Insights</Fragment>
@@ -31,21 +29,12 @@ const metadata = {
     <Fragment slot="animation"><TextCycle client:load /></Fragment>
   </Hero4>
 
-  <WidgetWrapper containerClass="max-w-7xl mx-auto" id="start">
+  <!--<WidgetWrapper containerClass="max-w-7xl mx-auto" id="subscribe">
     <InsightsResults client:idle />
-  </WidgetWrapper>
+  </WidgetWrapper>-->
 
-  <WidgetWrapper containerClass="max-w-7xl mx-auto">
-    <Headline
-      title="Custom Startup Insights"
-      subtitle="We'll notify you when we're ready to generate insights for your startup"
-    />
-    <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 sm:gap-2">
-      <input
-        placeholder="Email"
-        class="py-3 px-4 outline-none block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
-      />
-      <Button variant="primary">Send</Button>
-    </div>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto" id="subscribe">
+    <Headline title="Want more AI powered insights?" subtitle="Subscribe to get updates on our latest releases." />
+    <Subscribe client:idle />
   </WidgetWrapper>
 </Layout>
