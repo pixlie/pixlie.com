@@ -9,6 +9,7 @@ interface IData {
 interface IItem {
   name: string;
   value: number;
+  news?: string;
   url?: string;
 }
 
@@ -41,16 +42,16 @@ const DUMMY_DATA: IData[] = [
     type: TypeChoices.list,
     insight: '🏆 Top 10 [blank] this week:',
     items: [
-      { name: 'Name', value: 1 },
-      { name: 'Name', value: 2 },
-      { name: 'Name', value: 3, url: '[URL]' },
-      { name: 'Name', value: 4, url: '[URL]' },
-      { name: 'Name', value: 5, url: '[URL]' },
-      { name: 'Name', value: 6 },
-      { name: 'Name', value: 7, url: '[URL]' },
-      { name: 'Name', value: 8 },
-      { name: 'Name', value: 9 },
-      { name: 'Name', value: 10, url: '[URL]' },
+      { name: 'Name', news: '[Recent news]', value: 1, url: '[URL]' },
+      { name: 'Name', news: '[Recent news]', value: 2, url: '[URL]' },
+      { name: 'Name', news: '[Recent news]', value: 3, url: '[URL]' },
+      { name: 'Name', news: '[Recent news]', value: 4, url: '[URL]' },
+      { name: 'Name', news: '[Recent news]', value: 5, url: '[URL]' },
+      { name: 'Name', news: '[Recent news]', value: 6, url: '[URL]' },
+      { name: 'Name', news: '[Recent news]', value: 7, url: '[URL]' },
+      { name: 'Name', news: '[Recent news]', value: 8, url: '[URL]' },
+      { name: 'Name', news: '[Recent news]', value: 9, url: '[URL]' },
+      { name: 'Name', news: '[Recent news]', value: 10, url: '[URL]' },
     ],
   },
 ];
@@ -121,20 +122,23 @@ const Ratio = ({ items = [] }: { items: IItem[] }) => {
 
 const List = ({ items = [] }: { items: IItem[] }) => (
   <div class="flex w-full md:w-auto flex-col gap-6">
-    {items.map(({ name, value, url }) => (
+    {items.map(({ name, value, news, url }) => (
       <div class="flex justify-start items-center gap-6">
         <span class="flex w-12 h-12 md:w-16 md:h-16 items-center justify-center text md:text-xl font-bold rounded-full bg-blue-100 text-primary">
           {value}
         </span>
-        <a
-          href={`https://www.google.com/search?q=${name}`}
-          target="_blank"
-          rel="noreferrer"
-          style={{ flex: 1 }}
-          class="text md:text-xl text-primary font-bold"
-        >
-          {name}
-        </a>
+        <div>
+          <a
+            href={`https://www.google.com/search?q=${name}`}
+            target="_blank"
+            rel="noreferrer"
+            style={{ flex: 1 }}
+            class="text md:text-xl text-primary font-bold"
+          >
+            {name}
+          </a>
+          <p class="text md:text-xl text-muted">{news}</p>
+        </div>
         {url && (
           <a href={url} target="_blank" rel="noreferrer" class="flex-1 text-right text md:text-xl">
             🔗
