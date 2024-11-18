@@ -123,7 +123,7 @@ const List = ({ items = [] }: { items: IItem[] }) => (
   <div class="flex w-full md:w-auto flex-col gap-6">
     {items.map(({ name, value, url }) => (
       <div class="flex justify-start items-center gap-6">
-        <span class="flex w-12 h-12 md:w-16 md:h-16 items-center justify-center text-xl font-bold rounded-full bg-blue-100 text-primary">
+        <span class="flex w-12 h-12 md:w-16 md:h-16 items-center justify-center text md:text-xl font-bold rounded-full bg-blue-100 text-primary">
           {value}
         </span>
         <a
@@ -136,7 +136,7 @@ const List = ({ items = [] }: { items: IItem[] }) => (
           {name}
         </a>
         {url && (
-          <a href={url} target="_blank" rel="noreferrer" class="text md:text-xl">
+          <a href={url} target="_blank" rel="noreferrer" class="flex-1 text-right text md:text-xl">
             🔗
           </a>
         )}
