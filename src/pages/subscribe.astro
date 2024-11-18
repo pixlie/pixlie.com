@@ -1,0 +1,20 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import SubscribeSolid from '~/solidComponents/widgets/Subscribe';
+
+const metadata = {
+  title: 'Subscribe',
+};
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper id="form" containerClass="max-w-7xl mx-auto h-dvh">
+    <Headline
+      title="Want more?"
+      subtitle="Subscribe to get updates on our latest releases."
+    />
+    <SubscribeSolid client:idle />
+  </WidgetWrapper>
+</Layout>
