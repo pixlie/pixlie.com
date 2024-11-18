@@ -121,44 +121,7 @@ const metadata = {
   </WidgetWrapper> -->
 
   <WidgetWrapper containerClass="max-w-7xl mx-auto">
-    <InsightsResults
-      client:idle
-      results={[
-        {
-          type: 'percentage',
-          insight: '✨ [blank]% of startups have [blank].',
-          data: [
-            { name: 'X', value: 75 },
-            { name: 'Y', value: 50 },
-            { name: 'Z', value: 25 },
-          ],
-        },
-        {
-          type: 'ratio',
-          insight: '💪 [blank] startups have twice as many [A] compared to [B].',
-          data: [
-            { name: 'A', value: 50 },
-            { name: 'B', value: 25 },
-          ],
-        },
-        {
-          type: 'list',
-          insight: '🏆 Top 10 [blank] this week:',
-          data: [
-            { name: 'Name' },
-            { name: 'Name' },
-            { name: 'Name', url: '[URL]' },
-            { name: 'Name', url: '[URL]' },
-            { name: 'Name', url: '[URL]' },
-            { name: 'Name' },
-            { name: 'Name', url: '[URL]' },
-            { name: 'Name' },
-            { name: 'Name' },
-            { name: 'Name', url: '[URL]' },
-          ],
-        },
-      ]}
-    />
+    <InsightsResults client:idle />
   </WidgetWrapper>
 
   <WidgetWrapper containerClass="max-w-7xl mx-auto">

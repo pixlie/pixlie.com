@@ -1,6 +1,12 @@
 import { type Component } from 'solid-js';
 
 interface IData {
+  type: TypeChoices;
+  insight: string;
+  items: IItem[];
+}
+
+interface IItem {
   name: string;
   value: number;
   url?: string;
@@ -13,13 +19,49 @@ enum TypeChoices {
   list = 'list',
 }
 
+const DUMMY_DATA: IData[] = [
+  {
+    type: TypeChoices.percentage,
+    insight: '✨ [blank]% of startups have [blank].',
+    items: [
+      { name: 'X', value: 75 },
+      { name: 'Y', value: 50 },
+      { name: 'Z', value: 25 },
+    ],
+  },
+  {
+    type: TypeChoices.ratio,
+    insight: '💪 [blank] startups have twice as many [A] compared to [B].',
+    items: [
+      { name: 'A', value: 50 },
+      { name: 'B', value: 25 },
+    ],
+  },
+  {
+    type: TypeChoices.list,
+    insight: '🏆 Top 10 [blank] this week:',
+    items: [
+      { name: 'Name', value: 1 },
+      { name: 'Name', value: 2 },
+      { name: 'Name', value: 3, url: '[URL]' },
+      { name: 'Name', value: 4, url: '[URL]' },
+      { name: 'Name', value: 5, url: '[URL]' },
+      { name: 'Name', value: 6 },
+      { name: 'Name', value: 7, url: '[URL]' },
+      { name: 'Name', value: 8 },
+      { name: 'Name', value: 9 },
+      { name: 'Name', value: 10, url: '[URL]' },
+    ],
+  },
+];
+
 // TODO: finish this
 
 // const Average = ({ data }: { data: IData[] }) => {
 //   return <p class="text md:text-xl text-primary text-center font-bold">WIP</p>;
 // };
 
-const Percentage = ({ data }: { data: IData[] }) => {
+const Percentage = ({ items = [] }: { items: IItem[] }) => {
   const colors = [
     'rgb(219 234 254)',
     'rgb(191 219 254)',
@@ -35,7 +77,7 @@ const Percentage = ({ data }: { data: IData[] }) => {
     <div class="flex flex-col h-full w-full md:h-1/2 md:w-1/2 items-center justify-center gap-2">
       <p class="text md:text-xl text-primary text-center font-bold">All Startups</p>
       <div class="flex h-full w-full relative items-center justify-center aspect-square rounded-full bg-gray-100 shadow">
-        {data?.map(({ name, value }, i) => (
+        {items.map(({ name, value }, i) => (
           <div class="absolute bottom-0 flex flex-col h-full w-full  items-center justify-end gap-2">
             <p class="text md:text-xl  text-primary text-center font-bold">
               All Startups <span class="underline underline-offset-2">{`with ${name}`}</span>
@@ -57,12 +99,12 @@ const Percentage = ({ data }: { data: IData[] }) => {
   );
 };
 
-const Ratio = ({ data }: { data: IData[] }) => {
-  const maxValue = Math.max(...data.map((d) => d.value));
+const Ratio = ({ items = [] }: { items: IItem[] }) => {
+  const maxValue = Math.max(...items.map((item) => item.value));
   const size = (value: number) => Math.max((value / maxValue) * 100, 1);
   return (
     <div class="flex h-full w-full md:h-1/2 md:w-1/2 items-center justify-center gap-6">
-      {data?.map(({ name, value }) => (
+      {items.map(({ name, value }) => (
         <div
           class="flex items-center justify-center aspect-square rounded-full bg-blue-100 shadow"
           style={{
@@ -77,12 +119,12 @@ const Ratio = ({ data }: { data: IData[] }) => {
   );
 };
 
-const List = ({ data }: { data: IData[] }) => (
+const List = ({ items = [] }: { items: IItem[] }) => (
   <div class="flex w-full md:w-auto flex-col gap-6">
-    {data?.map(({ name, url }, i) => (
+    {items.map(({ name, value, url }) => (
       <div class="flex justify-start items-center gap-6">
         <span class="flex w-12 h-12 md:w-16 md:h-16 items-center justify-center text-xl font-bold rounded-full bg-blue-100 text-primary">
-          {i + 1}
+          {value}
         </span>
         <a
           href={`https://www.google.com/search?q=${name}`}
@@ -103,28 +145,23 @@ const List = ({ data }: { data: IData[] }) => (
   </div>
 );
 
-const InsightsResults: Component = ({
-  results,
-}: {
-  results: {
-    insight: string;
-    type: TypeChoices;
-    data: IData[];
-  }[];
-}) => (
-  <div class="flex flex-col gap-24 md:gap-32 lg:gap-40">
-    {results?.map(({ type, insight, data }) => (
-      <div class="flex flex-col justify-center items-center gap-6 px-6">
-        <h2 class="flex flex-wrap font-bold leading-tighter tracking-tighter font-heading text-heading text-center text-3xl md:text-4xl">
-          {insight}
-        </h2>
-        {/* {type === TypeChoices.average && <Average data={data} />} */}
-        {type === TypeChoices.percentage && <Percentage data={data} />}
-        {type === TypeChoices.ratio && <Ratio data={data} />}
-        {type === TypeChoices.list && <List data={data} />}
-      </div>
-    ))}
-  </div>
-);
+const InsightsResults: Component = () => {
+  // TODO: get actual data and replace dummy data
+  return (
+    <div class="flex flex-col gap-24 md:gap-32 lg:gap-40">
+      {DUMMY_DATA.map(({ type, insight, items }) => (
+        <div class="flex flex-col justify-center items-center gap-6 px-6">
+          <h2 class="flex flex-wrap font-bold leading-tighter tracking-tighter font-heading text-heading text-center text-3xl md:text-4xl">
+            {insight}
+          </h2>
+          {/* {type === TypeChoices.average && <Average data={data} />} */}
+          {type === TypeChoices.percentage && <Percentage items={items} />}
+          {type === TypeChoices.ratio && <Ratio items={items} />}
+          {type === TypeChoices.list && <List items={items} />}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default InsightsResults;
