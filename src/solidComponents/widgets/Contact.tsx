@@ -47,18 +47,11 @@ const Contact: Component = () => {
         <div class="py-8">Thank you {formData().name.split(' ')[0]}!</div>
       ) : (
         <form onSubmit={handleSubmit}>
-          <Input label="Name" name="name" placeholder="Name" value={formData().name} onChange={handleChange} />
-          <Input label="Email" name="email" placeholder="Email" value={formData().email} onChange={handleChange} />
-          <Textarea
-            label="Message"
-            name="message"
-            placeholder="Message"
-            value={formData().message}
-            onChange={handleChange}
-          />
-
+          <Input label="Name" name="name" value={formData().name} onChange={handleChange} />
+          <Input label="Email" name="email" value={formData().email} onChange={handleChange} />
+          <Textarea label="Message" name="message" value={formData().message} onChange={handleChange} />
           <div class="mt-10 grid">
-            <button class="btn btn-primary">Contact us</button>
+            <button class="btn btn-primary">Contact Us</button>
           </div>
         </form>
       )}
