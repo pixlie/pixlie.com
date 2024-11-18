@@ -1,4 +1,4 @@
-import { type Component } from 'solid-js';
+import { createResource, type Component } from 'solid-js';
 
 interface IData {
   type: TypeChoices;
@@ -147,9 +147,27 @@ const List = ({ items = [] }: { items: IItem[] }) => (
 
 const InsightsResults: Component = () => {
   // TODO: get actual data and replace dummy data
+  const getData = async () => {
+    try {
+      const response = await fetch('', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.ok) {
+        return await response.json();
+      }
+      return DUMMY_DATA;
+    } catch {
+      return DUMMY_DATA;
+    }
+  };
+  const [data] = createResource<IData[]>(() => getData());
+
   return (
     <div class="flex flex-col gap-24 md:gap-32 lg:gap-40">
-      {DUMMY_DATA.map(({ type, insight, items }) => (
+      {data()?.map(({ type, insight, items }) => (
         <div class="flex flex-col justify-center items-center gap-6 px-6">
           <h2 class="flex flex-wrap font-bold leading-tighter tracking-tighter font-heading text-heading text-center text-3xl md:text-4xl">
             {insight}
