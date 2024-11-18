@@ -83,7 +83,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       aria-label="Main navigation"
     >
       <ul
-        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"
+        class="flex flex-col pt-4 md:pt-0 gap-4 md:gap-0 md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center"
       >
         {
           links.map(({ text, href, links }) => (
@@ -124,6 +124,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
             </li>
           ))
         }
+        <Button
+          variant="primary"
+          text="Get Started"
+          href="https://github.com/pixlie/dwata"
+          target="_blank"
+          icon="tabler:brand-github"
+          class="md:hidden mt-4 mx-4"
+        />
       </ul>
     </nav>
     <div
@@ -155,14 +163,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               ))}
             </span>
           ) : (
-            <Button
-              variant="primary"
-              text="Get Started"
-              href="https://github.com/pixlie/dwata"
-              target="_blank"
-              icon="tabler:brand-github"
-              class="md:hidden ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto"
-            />
+            ''
           )
         }
       </div>
