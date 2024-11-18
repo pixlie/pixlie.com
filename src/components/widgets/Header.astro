@@ -155,7 +155,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               ))}
             </span>
           ) : (
-            ''
+            <Button
+              variant="primary"
+              text="Get Started"
+              href="https://github.com/pixlie/dwata"
+              target="_blank"
+              icon="tabler:brand-github"
+              class="md:hidden ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto"
+            />
           )
         }
       </div>
