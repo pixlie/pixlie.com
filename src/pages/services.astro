@@ -1,0 +1,186 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+// import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Consulting Services',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Consulting Services"
+    title="Transform Your Business with AI-Powered Knowledge Graphs"
+    subtitle="Expert consulting and implementation services backed by Pixlie AI, our cutting-edge semantic intelligence platform."
+    actions={[{ variant: 'primary', target: '_blank', text: 'Learn More About Us', href: '/about' }]}
+  />
+
+  
+
+  <!-- Content Widget **************** 
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'High-Quality Designs',
+        description:
+          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
+        icon: 'tabler:wand',
+      },
+      {
+        title: 'Customization Tools',
+        description:
+          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Pre-Designed Elements',
+        description:
+          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
+        icon: 'tabler:presentation',
+      },
+      {
+        title: 'Preview and Mockup Views',
+        description:
+          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
+        icon: 'tabler:carousel-horizontal',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      alt: 'Features Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
+    </Fragment>
+  </Content>  -->
+
+   <!-- Features2 Widget ************** -->
+
+   <Features2
+   title="What services do we provide?"
+   subtitle="We help organizations harness the power of semantic intelligence through expert consulting and our proprietary Pixlie AI technology. Our team turns complex data challenges into clear, actionable insights."
+   items={[
+     {
+       title: 'Strategic Data Architecture',
+       description:
+         'Our comprehensive data strategy begins with a thorough assessment of your current infrastructure. We work closely with your team to design custom knowledge graph solutions that align with your business goals. Through careful integration planning, we ensure seamless connection with your existing systems. Every implementation comes with a detailed roadmap focused on maximizing your return on investment.',
+       icon: 'tabler:database',
+     },
+     {
+       title: 'Implementation & Integration',
+       description:
+         'We handle every aspect of bringing Pixlie AI to your organization. Our full-service deployment includes seamless data migration and connection setup, robust security and privacy configuration, and thorough performance optimization. We ensure your team is fully equipped to succeed through comprehensive training and detailed documentation.',
+       icon: 'tabler:plug-connected',
+     },
+     {
+       title: 'Ongoing Support',
+       description:
+         'Your success doesn\'t end at implementation. We provide continuous system monitoring and maintenance to ensure optimal performance. Our team regularly fine-tunes your knowledge graph architecture and stands ready to provide technical support whenever you need it. We\'re committed to being your long-term partner in data excellence.',
+       icon: 'tabler:lifebuoy',
+     },
+   ]}
+ >
+   <Fragment slot="bg">
+     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+   </Fragment>
+ </Features2>
+
+
+  <!-- Content Widget **************** -->
+  <div style="padding-top: 60px;">
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Time-to-Value',
+        description:
+          'Skip the learning curve and accelerate your journey to semantic intelligence. As the creators of Pixlie AI, we bring deep expertise that transforms months of implementation into weeks. Our intimate knowledge of the platform means you\'ll benefit from optimized deployments, proven best practices, and insider techniques that only the original architects can provide.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Privacy-First Approach',
+        description:
+          'We architect every solution with privacy at its core, ensuring your sensitive data remains under your complete control. Whether deployed on your infrastructure or in your preferred cloud environment, our implementations maintain the highest standards of data security and sovereignty. As the creators of Pixlie AI, we\'ve built privacy into every layer of the technology.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Cost-Efficient Implementation',
+        description:
+          'Why spend valuable resources on trial and error? We\'ll help you avoid common pitfalls, optimize your deployment for efficiency, and train your team to maintain and extend your knowledge graph infrastructure. Our experience means you\'ll get it right the first time, saving both time and money while building a foundation for long-term success.',
+        icon: 'tabler:coin',
+      },
+    ]}
+    image={{
+      src: '/images/engineering.jpg',
+      alt: 'Engineering Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why Choose Us?</h3>
+    </Fragment>
+  </Content>
+</div>
+  <!-- Testimonials Widget *********** 
+
+  <Testimonials
+    title="Words from real customers"
+    testimonials={[
+      {
+        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
+        name: 'Emily Kennedy',
+        job: 'Front-end developer',
+        image: {
+          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
+          alt: 'Emily Kennedy Image',
+        },
+      },
+      {
+        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
+        name: 'Sarah Hansen',
+        job: 'Photographer',
+        image: {
+          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Sarah Hansen Image',
+        },
+      },
+      {
+        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
+        name: 'Mark Wilkinson',
+        job: 'Small business owner',
+        image: {
+          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
+          alt: 'Mark Wilkinson Image',
+        },
+      },
+    ]}
+    callToAction={{
+      target: '_blank',
+      text: 'More testimonials...',
+      href: 'https://github.com/onwidget/astrowind',
+      icon: 'tabler:chevron-right',
+    }}
+  /> -->
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: '/contact',
+      },
+    ]}
+    title="Ready to Harness Your Data's Full Potential?"
+    subtitle="Book your free consultation today. Our experts will show you how to unlock the power of semantic intelligence for your organization."
+  />
+</Layout>
