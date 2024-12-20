@@ -1,5 +1,6 @@
 ---
-import CallToAction from '~/components/widgets/CallToAction.astro';
+// import CallToAction from '~/components/widgets/CallToAction.astro';
+import CallToAction2 from '~/components/widgets/CallToAction2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Hero from '~/components/widgets/Hero.astro';
@@ -18,9 +19,9 @@ const metadata = {
 
   <Hero
     tagline="Consulting Services"
-    title="Transform Your Business with AI-Powered Knowledge Graphs"
+    title="Unlock Insights That Drive Impact"
     subtitle="Expert consulting and implementation services backed by Pixlie AI, our cutting-edge semantic intelligence platform."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Learn More About Us', href: '/about' }]}
+    actions={[{ variant: 'primary', text: 'Contact Us', href: '#contact' }]}
   />
 
   
@@ -69,24 +70,24 @@ const metadata = {
 
    <Features2
    title="What services do we provide?"
-   subtitle="We help organizations harness the power of semantic intelligence through expert consulting and our proprietary Pixlie AI technology. Our team turns complex data challenges into clear, actionable insights."
+   subtitle="Our team turns complex data challenges into clear, actionable insights."
    items={[
      {
        title: 'Strategic Data Architecture',
        description:
-         'Our comprehensive data strategy begins with a thorough assessment of your current infrastructure. We work closely with your team to design custom knowledge graph solutions that align with your business goals. Through careful integration planning, we ensure seamless connection with your existing systems. Every implementation comes with a detailed roadmap focused on maximizing your return on investment.',
+         'We work closely with your team to design custom knowledge graph solutions that align with your business goals. Every implementation comes with a detailed roadmap focused on maximizing your return on investment.',
        icon: 'tabler:database',
      },
      {
        title: 'Implementation & Integration',
        description:
-         'We handle every aspect of bringing Pixlie AI to your organization. Our full-service deployment includes seamless data migration and connection setup, robust security and privacy configuration, and thorough performance optimization. We ensure your team is fully equipped to succeed through comprehensive training and detailed documentation.',
+         'Our full-service deployment includes seamless data migration and connection setup, robust security and privacy configuration, and thorough performance optimization.',
        icon: 'tabler:plug-connected',
      },
      {
        title: 'Ongoing Support',
        description:
-         'Your success doesn\'t end at implementation. We provide continuous system monitoring and maintenance to ensure optimal performance. Our team regularly fine-tunes your knowledge graph architecture and stands ready to provide technical support whenever you need it. We\'re committed to being your long-term partner in data excellence.',
+         'Your success doesn\'t end at implementation. We provide continuous system monitoring and maintenance to ensure optimal performance.',
        icon: 'tabler:lifebuoy',
      },
    ]}
@@ -105,19 +106,19 @@ const metadata = {
       {
         title: 'Time-to-Value',
         description:
-          'Skip the learning curve and accelerate your journey to semantic intelligence. As the creators of Pixlie AI, we bring deep expertise that transforms months of implementation into weeks. Our intimate knowledge of the platform means you\'ll benefit from optimized deployments, proven best practices, and insider techniques that only the original architects can provide.',
+          'Skip the learning curve and accelerate your journey to semantic intelligence. As the creators of Pixlie AI, we bring deep expertise that transforms months of implementation into weeks.',
         icon: 'tabler:clock',
       },
       {
         title: 'Privacy-First Approach',
         description:
-          'We architect every solution with privacy at its core, ensuring your sensitive data remains under your complete control. Whether deployed on your infrastructure or in your preferred cloud environment, our implementations maintain the highest standards of data security and sovereignty. As the creators of Pixlie AI, we\'ve built privacy into every layer of the technology.',
+          'We architect every solution with privacy at its core, ensuring your sensitive data remains under your complete control.',
         icon: 'tabler:shield-lock',
       },
       {
         title: 'Cost-Efficient Implementation',
         description:
-          'Why spend valuable resources on trial and error? We\'ll help you avoid common pitfalls, optimize your deployment for efficiency, and train your team to maintain and extend your knowledge graph infrastructure. Our experience means you\'ll get it right the first time, saving both time and money while building a foundation for long-term success.',
+          'We\'ll help you avoid common pitfalls, optimize your deployment for efficiency, and train your team to maintain and extend your knowledge graph infrastructure.',
         icon: 'tabler:coin',
       },
     ]}
@@ -172,7 +173,7 @@ const metadata = {
     }}
   /> -->
 
-  <!-- CallToAction Widget *********** -->
+  <!-- CallToAction Widget *********** 
 
   <CallToAction
     actions={[
@@ -184,5 +185,26 @@ const metadata = {
     ]}
     title="Ready to Harness Your Data's Full Potential?"
     subtitle="Book your free consultation today. Our experts will show you how to unlock the power of semantic intelligence for your organization."
-  />
+  /> -->
+
+    <!-- CallToAction Widget *********** -->
+  <CallToAction2
+  title="Ready to Harness Your Data's Full Potential?"
+  titleLink="#contact"
+  subtitle="Book your free consultation today. Our experts will show you how to unlock the power of semantic intelligence for your organization."
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Write Us',
+      href: '/contact',
+     // icon: 'tabler:rocket'
+    },
+    {
+      variant: 'secondary',
+      text: 'Meet with Us',
+      href: 'https://calendly.com/brainless/discuss-pixlie-ai'
+    }
+  ]}
+/>
+
 </Layout>

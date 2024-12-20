@@ -118,10 +118,10 @@ export const headerData = {
       text: 'Insights',
       href: '/insights',
     },
-    // {
-    //   text: 'Dwata',
-    //   href: '/dwata',
-    // },
+   {
+     text: 'Services',
+      href: '/services',
+     },
     {
       text: 'About',
       href: '/about',
