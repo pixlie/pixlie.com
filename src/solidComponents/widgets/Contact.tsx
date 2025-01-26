@@ -1,5 +1,6 @@
 import { createResource, createSignal, type Component } from 'solid-js';
 import { Input, Textarea } from '../ui/Form';
+import { useRecaptcha } from './useRecaptcha';
 
 interface IFormData {
   name: string;
@@ -30,15 +31,20 @@ const Contact: Component = () => {
     return false;
   };
   const [submitted, { refetch: submitFormData }] = createResource(sendFormData);
+  const { isNotARobot } = useRecaptcha();
 
   const handleChange = (e: Event) => {
     const target = e.target as HTMLInputElement | HTMLTextAreaElement;
     setFormData((prev) => ({ ...prev, [target.name]: target.value }));
   };
 
-  const handleSubmit = (e: Event) => {
-    submitFormData();
+  const handleSubmit = async (e: Event) => {
     e.preventDefault();
+    if (await isNotARobot()) {
+      submitFormData();
+    } else {
+      alert('An error occurred. Please try again.');
+    }
   };
 
   return (
