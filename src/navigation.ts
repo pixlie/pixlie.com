@@ -114,10 +114,10 @@ export const headerData = {
     //   text: 'Pixlie AI',
     //   href: '/ai',
     // },
-    {
-      text: 'Insights',
-      href: '/insights',
-    },
+    // {
+    //   text: 'Insights',
+    //   href: '/insights',
+    // },
    {
      text: 'Services',
       href: '/services',
@@ -130,20 +130,24 @@ export const headerData = {
       text: 'Contact',
       href: '/contact',
     },
+    {
+      text: 'Blog',
+      href: '/blog',
+    },
   ],
   // actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
 };
 
 export const footerData = {
   links: [
-    // {
-    //   title: 'Product',
-    //   links: [
-    //     { text: 'Features', href: '#' },
-    //     { text: 'Security', href: '#' },
-    //     { text: 'Team', href: '#' },
-    //   ],
-    // },
+    {
+      title: 'Insights',
+      links: [
+        { text: 'Coming Soon', href: '/insights' },
+       // { text: 'Security', href: '#' },
+       // { text: 'Team', href: '#' },
+      ],
+    },
     // {
     //   title: 'Platform',
     //   links: [
@@ -167,8 +171,9 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'Insights', href: '/insights' },
+      //  { text: 'Insights', href: '/insights' },
         { text: 'About', href: '/about' },
+        { text: 'Blog', href: '/blog' },
         { text: 'Contact', href: '/contact' },
         // { text: 'Blog', href: '#' },
         // { text: 'Careers', href: '#' },
