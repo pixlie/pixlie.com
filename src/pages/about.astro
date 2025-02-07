@@ -6,6 +6,8 @@
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Team from '~/components/widgets/Team.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
 
 const metadata = {
   title: 'About us',
@@ -158,7 +160,7 @@ const metadata = {
 
   <Steps2
     title="Our values"
-    subtitle="We’re driven by a shared passion for doing things differently, and our values are the foundation of our team’s purpose and vision."
+    subtitle="We’re driven by a shared passion for doing things differently, and our values are the foundation of our team’s purpose and vision. <br /><br />Learn more about <a href=/blog/doing-things-differently>how we are doing things differently</a>."
     items={[
       {
         title: 'Privacy-First',
@@ -268,4 +270,18 @@ const metadata = {
       { title: 'Awards', amount: '24' },
     ]}
   /> -->
+
+    <!-- CallToAction Widget *********** -->
+
+    <CallToAction
+    actions={[
+      {
+        variant: 'secondary',
+        text: 'Start exploring',
+        href: 'https://github.com/pixlie/PixlieAI',
+      },
+    ]}
+    title="Try Pixlie Yourself"
+    subtitle="Pixlie is open source and can be run on any modern computer."
+  />
 </Layout>
