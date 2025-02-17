@@ -18,7 +18,7 @@ const Contact: Component = () => {
     if (!formData().name || !formData().email) {
       return false;
     }
-    const response = await fetch('https://website-api.pixlie.com/contact', {
+    const response = await fetch('https://endless-rage-production.up.railway.app/contact', {
       method: 'POST',
       body: JSON.stringify(formData()),
       headers: {
