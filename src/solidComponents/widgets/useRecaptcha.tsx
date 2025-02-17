@@ -23,7 +23,7 @@ export const useRecaptcha = () => {
       if (!token) {
         return false;
       }
-      const response = await fetch('https://website-api.pixlie.com/verify-recaptcha', {
+      const response = await fetch('https://endless-rage-production.up.railway.app/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token }),
