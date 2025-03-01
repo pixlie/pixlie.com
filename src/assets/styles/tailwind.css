@@ -96,7 +96,7 @@
   overflow: hidden;
 }
 
-.line {
+.text-scroller .line {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -127,4 +127,31 @@
   to {
     transform: translateY(-100%);
   }
+}
+
+/* Code Copy Button */
+pre.astro-code {
+  position: relative;
+}
+.code-copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #CCC;
+  border: 1px solid #CCC;
+  padding: 0.1em 0.2em 0.2em;
+  line-height: 0.7;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.code-copy-button.active {
+  color: #0B0;
+}
+
+.code-copy-button:hover {
+  background: rgba(255, 255, 255, 0.25);
 }

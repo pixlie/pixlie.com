@@ -149,6 +149,23 @@ import { UI } from 'astrowind:config';
     document.getElementById('header')?.classList.remove('h-screen');
     document.getElementById('header')?.classList.remove('expanded');
     document.querySelector('#header nav')?.classList.add('hidden');
+    document.querySelectorAll("pre.astro-code").forEach((pre) => {
+      const button = document.createElement("button");
+      button.innerHTML = "⎘";
+      button.classList.add("code-copy-button");
+
+      button.addEventListener("click", () => {
+        const code = pre.querySelector("code");
+        if (!code) return;
+        navigator.clipboard.writeText(code.innerText).then(() => {
+          button.classList.add("active");
+          button.innerHTML = "✔";
+          setTimeout(() => {button.innerHTML = "⎘";button.classList.remove("active");}, 2000);
+        });
+      });
+
+      pre.appendChild(button);
+    });
   };
 
   window.onload = onLoad;
