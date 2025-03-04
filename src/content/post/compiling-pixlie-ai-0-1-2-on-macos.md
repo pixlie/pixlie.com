@@ -1,6 +1,6 @@
 ---
 publishDate: 2025-03-01T00:00:00Z
-updateDate: 2025-03-02T00:00:00Z
+updateDate: 2025-03-04T00:00:00Z
 title: Compiling Pixlie AI 0.1.2 on MacOS
 excerpt: Fix compilation errors on MacOS after recent dependency updates.
 # image: https://pixlie.com/images/blog/pixlie-screenshot-search-results.png
@@ -42,7 +42,7 @@ To fix these issues, you need to take the following steps:
 ---
 _Update: 2 Mar, 2025_
 
-Some people have reported that the above steps are not enough and it still throws the error ``linking with `cc` failed``.
+Some users have reported that the above steps are not enough and it still throws the error ``linking with `cc` failed``.
 
 If you're facing this error after making the above changes, please make sure you are using a fresh/reloaded terminal environment and take the following steps:
 
@@ -57,7 +57,44 @@ If you're facing this error after making the above changes, please make sure you
     ```
 3. Open a new terminal or reload the environment and try running Pixlie AI again.
 ---
+_Update: 4 Mar, 2025_
 
+The above steps still throw an error in `rust-analyzer` running in the VS Code IDE, affecting some development features.
+
+To resolve these issues, you can do the following:
+
+1. Install `lld`:
+    ```shell
+    brew install lld
+    ```
+2. Run the following to check the installation path of Homebrew:
+    ```shell
+    $(brew --prefix llvm)
+    ```
+    If the path is not the same in step (3) below, you can use the correct path in `settings.json`.
+3. Add these settings to `.vscode/settings.json` in the project root:
+    ```json
+    {
+        "rust-analyzer.runnables.extraEnv": {
+            "LIBCLANG_PATH": "/opt/homebrew/opt/llvm/lib",
+            "DYLD_LIBRARY_PATH": "/opt/homebrew/opt/llvm/lib",
+            "PATH": "/opt/homebrew/opt/llvm/bin:${env:PATH}",
+
+            "CC": "/opt/homebrew/opt/llvm/bin/clang",
+            "CXX": "/opt/homebrew/opt/llvm/bin/clang++",
+            
+            "ROCKSDB_INCLUDE_DIR": "/opt/homebrew/opt/rocksdb/include",
+            "ROCKSDB_LIB_DIR": "/opt/homebrew/opt/rocksdb/lib",
+            
+            "LD": "/opt/homebrew/opt/lld/bin/ld64.lld",
+            "LDFLAGS": "-fuse-ld=/opt/homebrew/opt/lld/bin/ld64.lld",
+            "AR": "/opt/homebrew/opt/llvm/bin/llvm-ar"
+        }
+    }
+    ```
+    You can exclude `ROCKSDB_INCLUDE_DIR` & `ROCKSDB_LIB_DIR`, if you have not installed `rocksdb`.
+
+---
 If you still face any issues with compiling Pixlie AI, please do not hesitate to [contact us](https://pixlie.com/contact). We would love to hear from you – issue or no issue.
 
 ---
