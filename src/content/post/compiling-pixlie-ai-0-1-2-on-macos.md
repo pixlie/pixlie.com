@@ -69,9 +69,9 @@ To resolve these issues, you can do the following:
     ```
 2. Run the following to check the installation path of Homebrew:
     ```shell
-    $(brew --prefix llvm)
+    brew --prefix
     ```
-    If the path is not the same in step (3) below, you can use the correct path in `settings.json`.
+    If the base path is not the same in step (3) below, you can use the correct path in `settings.json`.
 3. Add these settings to `.vscode/settings.json` in the project root:
     ```json
     {
