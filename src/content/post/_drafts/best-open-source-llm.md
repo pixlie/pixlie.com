@@ -4,7 +4,7 @@ title: Pixlie's Top Open Source LLMs (updated March 2025)
 excerpt: Partnering with nonprofits through Tech to the Rescue is how we are bringing our product to life. Our first mission is supporting Fundatia ADEPT give farmers of Transylvania an economic future without sacrificing their sustainability.
 image: https://pixlie.com/images/blog/pixlie-screenshot-search-results.png
 metadata:
-  title: Best Open Source LLMs in 2025
+  title: Pixlie's Top Open Source LLMs (updated March 2025)
   description: Partnering with Non Profits through Tech to the Rescue is how we are bringing our product to life.
 ---
 
@@ -23,9 +23,12 @@ Secondly, there should be public to model weights must be available. This means 
 
 Lastly, the model should be transparent in how it was trained and what data was used. 
 
-With any open source LLM, you will need to host the model (which can be expensive in itself), and support is not provided. That being said, it is becoming easier and easier to host your own models with applications like [Ollama](https://ollama.com/).  
+With any open source LLM, you will need to host the model (which can be expensive in itself), and support is not provided. That being said, it is becoming easier and easier to host your own models with applications like [Ollama](https://ollama.com/).
 
 ## Why does open source matter? 
+Why does privacy matter? If privacy doesn't matter to you, and you don't want to build your own model, then open source LLMs probably don't matter to you. But if you want to keep your data or what you ask these LLMs private, then open source LLMs are the only way to do it. 
+
+It democratizes LLMs as well. Anybody can use it, and contribute to it.  Instead of AI being in the hands of one or two companies, its available to everyone
 
 ## Top Open Source LLMs
 There are many, many open source LLMs. But in this article, we are going to go over only the top ones, as not all are created equally. For a full list, check out [Eugeneyan's Open LLMs list](https://github.com/eugeneyan/open-llms).
