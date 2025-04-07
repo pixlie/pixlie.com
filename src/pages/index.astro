@@ -12,7 +12,7 @@ import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Pixlie: AI-Powered Website Analysis',
+  title: 'Pixlie: Semantic Search That Truly Understands Your Data',
   ignoreTitleTemplate: true,
 };
 ---
@@ -33,11 +33,11 @@ const metadata = {
     image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
     <Fragment slot="title">
-      <span class="text-accent dark:text-white highlight">AI-powered</span> Website Analysis
+      <span class="text-accent dark:text-white highlight">Semantic Search</span> That Truly Understands Data
     </Fragment>
 
     <Fragment slot="subtitle">
-      Point Pixlie at any website and describe what you need - from pricing data to project details. Our open-source intelligent crawler does the rest, no coding required.
+      Our open-source technology transforms data into knowledge graphs for superior search accuracy at lower costs. Maintain complete privacy while extracting valuable entities and relationships. Try it now with our no code web crawler.
     </Fragment>
   </Hero>
 
@@ -97,7 +97,7 @@ const metadata = {
       {
         title: 'No code graph queries',
         description:
-          'Use the built-in admin UI to browse your entire knowledge graph. Make semantic queries without code!',
+          'Use the built-in admin UI to browse your entire knowledge graph. Make semantic queries without code.',
         icon: 'tabler:chart-dots',
       },
       {
@@ -115,8 +115,10 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Insights with Pixlie',
-        href: '/insights',
+        text: 'Get Pixlie',
+        href: 'https://github.com/pixlie/PixlieAI',
+        target: '_blank',
+        icon: 'tabler:brand-github',
       },
     ]}
   >
