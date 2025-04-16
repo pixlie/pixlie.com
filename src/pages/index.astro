@@ -9,7 +9,7 @@ import Features from '~/components/widgets/Features.astro';
 // import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 // import FAQs from '~/components/widgets/FAQs.astro';
 // import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import CallToAction2 from '~/components/widgets/CallToAction2.astro';
 
 const metadata = {
   title: 'Pixlie: Semantic Search That Truly Understands Data',
@@ -51,42 +51,42 @@ const metadata = {
     id="features"
     tagline="Features"
     title="How Pixlie Works for You"
-    subtitle="Turn any website into structured, actionable intelligence - Pixlie creates detailed knowledge graphs from data for more accurate insights."
+    subtitle="Turn any website or data source into structured, actionable intelligence - Pixlie autonomously creates detailed knowledge graphs from data for more accurate insights."
     items={[
       {
         title: 'Self-hosted and private',
-        description: 'Pixlie is open source and you can self-host it on your computer or cloud instance.',
+        description: 'Pixlie is 100% open source and EU-based. Self-host it on your own infrastructure, maintaining complete data ownership and privacy compliance.',
         icon: 'tabler:shield',
       },
       {
         title: 'Add your data',
-        description: 'Multiple file formats are supported to ingest your data, including CSV, JSON, and Markdown.',
+        description: 'Our powerful web crawler is the perfect starting point for ingesting public data. Additional file formats (CSV, JSON, Markdown) are coming soon to expand your knowledge graph with private data sources.',
         icon: 'tabler:database',
       },
       {
         title: 'Integrated web crawler',
-        description: 'Pixlie can crawl the web in order to enhance your data with public knowledge.',
+        description: 'Autonomously explore and map the web to enhance your knowledge graph with relevant public information while maintaining complete privacy.',
         icon: 'tabler:spider',
       },
       {
         title: 'Share with your team',
-        description: 'Share your results with your team, wherever they are in the world, either on a private server or with cloud.',
+        description: 'Collaborate securely with your team on a private server or cloud instance - all while keeping your data under your control.',
         icon: 'tabler:users-group',
       },
       {
         title: 'Semantics management',
-        description: 'Manage real-world semantics that are extracted from your data using the built-in admin UI.',
+        description: 'Use our intuitive admin UI to manage real-world semantics extracted from your data, creating meaningful connections between concepts.',
         icon: 'tabler:world',
       },
       {
         title: 'Hosted and local AI models',
-        description: "Integrate Anthropic's Claude using your API keys and local AI models (your computer or cloud).",
+        description: "Choose your AI approach - integrate Anthropic's Claude using your API keys or use local models on your own infrastructure.",
         icon: 'tabler:robot',
       },
       {
         title: 'Entity and relationship extraction',
         description:
-          "Use Anthropic's Claude and GLiNER to classify text and extract entities in a cost-effective manner.",
+          "Our multi-agent system uses specialized models to classify text and extract entities cost-effectively, building a comprehensive knowledge graph.",
         icon: 'tabler:zoom-scan',
       },
       {
@@ -111,22 +111,26 @@ const metadata = {
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
+  <CallToAction2
     actions={[
       {
         variant: 'primary',
+        text: 'Contact',
+        href: '/contact',
+      },
+      {
+        variant: 'secondary',
         text: 'Get Pixlie',
         href: 'https://github.com/pixlie/PixlieAI',
         target: '_blank',
-        icon: 'tabler:brand-github',
+        icon: 'tabler:brand-github'
       },
     ]}
   >
     <Fragment slot="title"> Experience Pixlie in Action </Fragment>
 
     <Fragment slot="subtitle">
-      Pixlie is open source and is under active development. Our work is done in public, please check our GitHub
-      repository.
+      Pixlie is open source and under active development. Get started with our community edition, or contact us for custom implementation services to integrate Pixlie's semantic intelligence into your products.
     </Fragment>
-  </CallToAction>
+  </CallToAction2>
 </Layout>
