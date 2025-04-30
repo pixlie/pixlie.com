@@ -3,6 +3,7 @@ publishDate: 2025-02-24T00:00:00Z
 title: Building a Smarter Web Crawler for Nonprofits (and the World)
 excerpt: Partnering with nonprofits through Tech to the Rescue is how we are bringing our product to life. Our first mission is supporting Fundatia ADEPT give farmers of Transylvania an economic future without sacrificing their sustainability.
 image: https://pixlie.com/images/blog/pixlie-screenshot-search-results.png
+author: Hilary Torn
 metadata:
   title: Building a Smarter Web Crawler for Nonprofits (and the World)
   description: Partnering with Non Profits through Tech to the Rescue is how we are bringing our product to life.

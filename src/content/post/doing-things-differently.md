@@ -2,6 +2,7 @@
 publishDate: 2025-02-02T00:00:00Z
 title: Doing Things Differently
 excerpt: Tired of the norms in the tech industry, we have decided to build Pixlie differently. 
+author: Hilary Torn
 metadata:
   title: How We Are Doing Things Differently at Pixlie
   description: Tired of the norms in the tech industry, we have decided to build Pixlie differently. Read what that means for you.

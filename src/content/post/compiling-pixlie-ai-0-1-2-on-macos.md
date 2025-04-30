@@ -4,6 +4,7 @@ updateDate: 2025-03-04T00:00:00Z
 title: Compiling Pixlie AI 0.1.2 on MacOS
 excerpt: Fix compilation errors on MacOS after recent dependency updates.
 # image: https://pixlie.com/images/blog/pixlie-screenshot-search-results.png
+author: Mitesh Ashar
 metadata:
   title: Compiling Pixlie AI 0.1.2 on MacOS
   description: Fix compilation errors on MacOS after recent dependency updates.
